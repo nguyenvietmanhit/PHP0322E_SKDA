@@ -1,0 +1,48 @@
+- Trong 1 dự án:
+Dev: nhiều level: thực tập sinh/intern -> fresher -> junior -> senior -> Teachnical Leader -> PM
+Tester: thường là nữ
+BA: Bussiness Analysment: gặp kh để nhận req
+PM: Project Manager: Qlu dự án
+BrSE: Bride System Engineer: Kỹ sư cầu nối: có ngoại ngữ giao tiếp với KH
+Technical Leader: đưa ra/review giải pháp code cho dev
+DevOps: dev + operation/deloy
+
+- Cách học lập trình hiệu quả:
++ Trên lớp: nghe và code theo giảng viên -> chạy đc code 
+-> Về nhà: 
++ Code lại trên lớp, xem từng dòng code có ý nghĩa gì -> mất time
++ Làm bài tập về nhà
++ Search GG, tìm các bài tập / hướng dẫn liên quan đến kiến thức vừa học
+HTML -> search: html tutorial
+-> Cố gắng cân đối thời gian
+
+- Coi lớp mình là 1 team cùng làm 1 dự án -> áp dụng Scrum
++ Khi nhận dự án: nhận các yêu cầu từ KH -> Product Backlog
+-> Sprint: chu trình để hoàn thành Product Backlog
+-> Bắt đầu 1 Sprint -> Sprint Planning: Họp đầu sprint: mỗi 1 chức năng thì estimate thời gian làm tầm bao lâu ?
+-> DEv đi code
+-> Họp rất nhiều: Daily Scrum - họp hàng ngày: 15p mỗi ngày, PM sẽ hỏi dev 3 câu hỏi chính:
++ Hqua bạn làm gì?
++ Hnay bạn sẽ làm gì?
++ Có gặp khó khăn gì ko?
+- Sprint Review: cả team sẽ cùng review các chwucs năng đã code trong sprint hiện tại
+- Sprint Retro: dựa vào Review để rút kinh nghiệm, đưa ra các cải tiến
+-> release cho KH xem
+
+
+- Git là gì?
++ Là công cụ quản lý source code, giúp code nhóm 1 hiệu quả
++ VD khi ko dùng git: 1 team có 3 bạn A, B, C
+A code Login
+B code Register
+C code Logout
+-> làm thủ công: Lấy máy A làm chuẩn, copy code của B, C vào A
+-> cả 3 cùng sửa 1 file chung -> ghép code phải so sánh từng dòng code của 3 ng để ghép
+-> Git giải quyết đc bài toán trên -> ghép tự động
+-> Github, Gitlab, Bitbucket là các dịch vụ triển khai trên nền Git
+-> Demo thao tác với git cơ bản:
++ Đẩy code từ local lên github
++ Kéo code trên github về ...
+-> cài Git ?
+
+- Demo tạo 1 respository trên Github: nơi lưu source code -> Google Drive
