@@ -1,0 +1,70 @@
+Demo về Git
+- Git là công cụ quản lý source code - (Google Drive)
+- Git giúp code nhóm hiệu quả hơn 
+- 100% công ty về phần mềm đều sử dụng Git để qly source code
+- Github/Gitlab/Bitket là dịch vụ dựa trên Git
+Dùng Github để demo
++ Cần đăng ký tài khoản github trc
+1/Demo cách đẩy source code từ local/máy tính -> Github bằng Git
+- HĐH Linux
+- Một số command line cơ bản:
+cd \  : về ổ gốc tính từ đường dẫn hiện tại (change directory)
+mkdir php0920e2_git: tạo thư mục php0920e2_git (make directory)
+ cd php0920e2_git\
+ D:
+
+ - git init: khởi tạo git để quản lý project hiện tại
+ - git status: ktra trạng thái file/thư mục trong project
+ - git remote add origin https://github.com/nguyenvietmanhit/php0920e2_git.git
+ Gắn link respository vào project
+ - git remote -v:
+ Kiểm tra các link respository đang được gắn với project
+
+ + Các bước để đẩy code lên respo
+ - git add <đường dẫn file>: add các đường dẫn để Git quản lý đc
+ - Nếu là lần đầu tiên commit trên máy, thì cần cấu hình user name và email cho Git:
+  git config --global user.name "Nguyen Viet Manh"
+  git config --global user.email "nguyenvietmanhit@gmail.com"
+ - git commit -m "<nội dung commit>": đánh dấu lại thay đổi sau khi git add
+ - git push origin master: đẩy lên branch master của repository
+ Luôn sử dụng Git để quản lý source code
+
+ 2/ Lấy source code từ git của 1 người khác về local
+ Demo lấy source code của khóa học về
+ - Cần biết link git của lớp:
+ -  git clone https://github.com/nguyenvietmanhit/PHP0921E2_SKDA.git
+ Lấy code từ link git về local
+
+ 3/ Cập nhật thay đổi mới nhất từ respo mà ko cần clone mới
+- git pull origin master: cập nhật các thay đổi từ link respo về local\
+
+ 4/ Code nhóm sử dụng Git
+ + Trưởng nhóm:
+ - Tạo respo, để chứa code của dự án
+ - Đẩy code ban đầu lên respo
+ - Cấp quyền cho các thành viên truy cập vào respo để có thể code chung đc : Settings -> Manage Access -> Add people
+ + Các thành viên:
+ - Dùng git lấy code của dự án về local: clone
+ - Thành viên bắt đầu đi code chức năng: 
+ Mỗi bạn có nhiệm vụ tạo 1 file với tên file theo cú pháp <tên của bạn>.txt
+ Nội dung file: Hello, <tên của bạn>
+ a/ Dùng git tạo branch mới từ branch chính là master, tương ứng với chức năng đang đc giao:
+ git branch branch_nvmanh: tạo nhánh có tên branch_nvmanh
+ b/ Checkout sang nhánh vừa tạo:
+ git checkout branch_nvmanh
+ #####git checkout -b abcxyz: vừa tạo nhánh mới vừa checkout luôn
+ c/ Đi code chức năng đc giao trên nhánh vừa checkout
+ Mỗi bạn có nhiệm vụ tạo 1 file với tên file theo cú pháp <tên của bạn>.txt
+ Nội dung file: Hello, <tên của bạn>
+d/ Git add, git commit
+ Tuy nhiên git push phải push lên nhánh hiện tại của bạn, ko đc push thẳng vào nhánh master
+e/ Sau khi push lên, cần lên git của dự án tạo Pull request để yêu cầu merge branch của bạn vào branch chính là master
+ + Kể từ giờ, mỗi lần code 1 chức năng mới, cần làm thêm các thao tác sau:
+ - Checkout về nhánh chính lá master:
+ git checkout master
+ - Đồng bộ code mới nhất từ nhánh master trên respo về local:
+ git pull origin master
+ - Lặp lại các bước a,b,c,d,e để làm chức năng mới
+ Tên branch: tên-của-ban_html
+ Làm chức năng sau: Tạo 1 file <tên của bạn>.html
+ Nội dung file: <i>Chào bạn, tên-của-bạn</i>
