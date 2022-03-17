@@ -1,0 +1,35 @@
+<script type="text/javascript">
+  var arr = [1, 2, 10, 9, 8, 7, 'string3', null, true];
+  // var arr = new Array(1, 2, 'string3', null, true);
+  console.log(arr.length)
+  console.log(arr[0])
+
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+  }
+
+  arr.forEach(function(value, key) {
+    console.log("Key: " + key + ", Value: " + value)
+  })
+
+
+  arr.push('enddd');
+  arr.pop();
+  arr.shift();
+  arr.unshift("Đasadsadsa");
+
+  var index = arr.indexOf('string3');
+  console.log(index);
+  // console.log(arr)
+  // var removedItem = arr.splice(3, 2);
+  // console.log(removedItem)
+  console.log(arr.includes('string3'))
+  console.log(arr.join(' '))
+  // console.log(arr)
+  // console.log(arr.reverse());
+  arr.sort();
+  console.log(arr)
+
+  // arr
+
+</script>

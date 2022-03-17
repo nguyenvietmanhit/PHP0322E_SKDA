@@ -1,0 +1,165 @@
+<!-- Đây là thẻ h1 của HTML: Ctrl / -->
+<h1>Hello, World</h1>
+<!-- 
+- Javascript là gì?
++ Là ngôn ngữ kịch bản phía client, 1995, Brendan Eich
+PHP, Java ngôn ngữ bên phía server
++ Javascript chạy mọi HĐH: Window, Linux, Mac, trên hầu hết các trình duyệt hiện đại
+- Học Javascript ntn trong khóa PHP ?
++ Học khái niệm chung của lập trình: biến, hằng, hàm ...
++ Học cách Javascript tương tác với HTML -> event của JS
+- Javascript là ngôn ngữ hoàn toàn khác Java
+- Javascript đc chạy khi nhúng trong HTML 
+- Khai báo Javascript, có 3 cách khai báo:
++ Nhúng code trực tiếp trong thẻ HTML thông qua sự kiện
++ Nhúng code trực tiếp trong file .html thông qua thẻ HTML là <script>
++ Nhúng từ 1 file Javscript bên ngoài có đuôi là .js 
+ -->
+<script type="text/javascript">
+	// Code Javascript
+	// Code JS đầu tiên
+	// alert('Chào nvmanh');
+	// Các khái niệm cơ bản của lập trình thông qua JS
+	// 1/ Biến - Variable
+	// + Dùng để lưu giá trị
+	// + Biến đổi: thay đổi giá trị của biến bất cứ thời điểm nào
+	// - Khai báo biến: từ khóa var, let, const
+	// biến/tên hộp là name, giá trị để vào hộp là chuỗi nvmanh
+	var name = 'nvmanh'; 
+	var address = 'Sơn Đồng, Hoài Đức, Hà Nội';
+	var number1, number2;
+
+	// Hàm hiển thị trong tab Console của trình duyệt, hàm chuyên dùng để debug
+	// Debug: xem thông tin từng dòng code -> fixbug
+	// Cần mở Inspect HTML của trình duyệt lên thì mới xem đc: Chuột phải trình duyệt -> Inspect HTML / Kiểm tra
+	console.log('Chuỗi này hiển thị ở đâu?');
+	console.log(name); //nvmanh
+	console.log(address); //Sơn Đồng, Hoài Đức, Hà Nội
+	// Ký tự nối chuỗi JS dùng ký tự +
+	console.log('Tên của bạn: ' + name); //Tên của bạn: nvmanh
+	// - Quy tắc khai báo biến:
+	// + Tên biến ký tự đầu tiên phải là chữ hoặc _
+	// + Tên biến ko đc chứa các ký tự đặc biệt, trừ $
+	// + Tên biến ko đc trùng với từ khóa của JS
+	// + Tên biến có ngữ nghĩa
+	// + Tên biến phân biệt hoa thường
+	// var 2name = 'nvmanh';
+	//var name%2 = 'nvmanh';
+	// var var = 'nvmanh';
+	 // var x = 5;
+	 var number1 = 5;
+	 var name = 'nvmanh';
+	 var naMe = 'abc';
+	 var birthdayofme = '12/12/2000';
+	 var birthday_of_me = '12/12/2000';
+	// Mọi lỗi trong JS hiển thị trong tab Console của trình duyệt
+
+	// 2 / Các kiểu dữ liệu trong JS
+	// Để biết đc kiểu dữ liệu của 1 biến, nhìn vào giá trị của biến đó
+	// - number: kiểu số
+	var number1 = 10;
+	var number2 = -1;
+	var number3 = 1.23;
+	console.log(typeof number3); //number
+	// - string: kiểu chuỗi, sử dụng cặp nháy' hoặc "" bao lấy chuỗi
+	var str1 = 'String 1';
+	var str2 = "String 2";
+	var str3 = "Hello, 'nvmanh' ";
+	console.log(str3); // Hello, 'nvmanh'
+	console.log(typeof str3); //string
+	// - boolean: kiểu đúng sai, chỉ gồm 2 giá trị duy nhất: true hoặc false (viết thường)
+	var bool1 = true;
+	var bool2 = false;
+	// var bool3 = True; //báo lỗi cú pháp
+	console.log(typeof bool2); //bool - boolean
+	// Kiểu số, chuỗi, boolean là các kiểu dữ liệu nguyên thủy: có thể tính toán đc
+	// - undefined: kiểu ko xác định, khi khai báo biến mà ko gán giá trị
+	var und1;
+	console.log(typeof und1); //undefined
+	// - null: xảy ra khi đối tượng ko tồn tại, chỉ có 1 giá trị duy nhất: null (viết thường)
+	// JS đối xử với null như 1 object
+	var n1 = null;
+	console.log(typeof n1); //object
+	// - array: kiểu mảng, là tập các phần tử , chứa đc nhiều giá trị
+	// JS đối xử với array như 1 object
+	var arr1 = [123, 'hello', true];
+	console.log(typeof arr1); //object
+	// - object: kiểu đối tượng, thuộc tính và phương thức
+	var obj1 = {
+		name: 'nvmanh', //thuộc tính name
+		age: 31, //thuộc tính age
+		show: function() { // phương thức show
+			console.log('Phương thức show');
+		}
+	};
+	console.log(typeof obje1); //object
+	// Sẽ có các buổi học chuyên về array và object
+	// 3 / Hàm
+	// + Là 1 tập khối lênh xử lý logic nào đó
+	// + Có tính sử dụng lại
+	// - Phân loại hàm:
+	// + Hàm có sẵn: ngôn ngữ cung cấp sẵn: alert, console.log, typeof ....
+
+	// + Hàm tự định nghĩa: hàm do bạn từ định nghĩa ra, có 3 dạng chính:
+
+	// Hàm ko có tham số
+	function show() {
+		// Code logic 
+		console.log('Hàm show');
+	}
+	show(); //Hàm show
+	// Khai báo xong phải gọi hàm
+	// Hàm có tham số: viết hàm tính tổng của 2 số bất kỳ và hiển thị ra
+	// + Tham số của hàm ? Là biến đại diện cho giá trị thật nào đó, đc thao tác bên trong hàm, cần dựa vào yêu cầu của bài toán -> tham số
+	function sum(number1, number2) {
+		var sum = number1 + number2;
+		console.log("Tổng = " + sum);
+	}
+	// Gọi hàm, đây là lúc truyền giá trị thật cho tham số
+	sum(1, 2); // Tổng = 3
+	sum(1, 4); // Tổng = 5
+	sum(2, 4); // Tổng = 6
+	// VD: viết hàm để hiển thị tên của người bất kỳ: showName -> camelCase
+	function showName(name) {
+		console.log('Chào bạn, ' + name);
+	}
+	// Gọi hàm
+	showName('Chín'); //Chào bạn, Chín
+	showName('Linh'); //Chào bạn, Linh
+	// Hàm có tham số, có giá trị trả về -> nên viết nhất
+	// VD: viết hàm tính tổng 2 số -> kết quả sau khi tính tổng sẽ là gì ?
+	// -> giá trị trả về của hàm
+	function sum1(number1, number2) {
+		var sum = number1 + number2;
+		// Ko viết code hiển thị sum bên trong hàm
+		// Cần trả về giá trị cho hàm này
+		return sum; // là kiểu number
+		// Từ khóa return có 2 đặc điểm:
+		// - Làm cho hàm có giá trị nào đó
+		// - Kết thúc hàm: code phía sau return ko bao giờ đc thực thi
+		console.log('Code này có chạy ko?');
+	}
+
+	// Gọi hàm và truyền giá trị:
+	// Nếu hàm có trả về giá trị, khi đó hàm sẽ như 1 giá trị nào đó
+	// -> tạo biến , gán giá trị đó cho biến
+	var total1 = sum1(1, 2);
+	// Tùy ý xử lý biến 1 cách linh hoạt: mang biến này đi + - * / 
+	console.log("Total1 = " + total1);
+	total1 = total1 + 6;
+	console.log("Total1 mới = " + total1);
+
+	// VD: viết hàm hiển thị tên của người bất kỳ
+	function showNameReturn(name) {
+		// Nếu 1 biến khai báo ra mà chỉ dùng duy nhất 1 lần thì ko cần thiết phải khai báo, thao tác trực tiếp giá trị luôn
+		var result = "Tên của bạn là: " + name;
+		// Thay vì hiển thị, sẽ return
+		return result;
+	}
+	// gọi hàm
+	var show1 = showNameReturn('Mạnh');
+	// var show1 = "Tên của bạn là: Mạnh";
+	console.log(show1); //Tên của bạn là: Mạnh
+	var show2 = showNameReturn('Chín');
+	console.log("Hello, " + show2); //Hello, Tên của bạn là: Chín
+</script>
