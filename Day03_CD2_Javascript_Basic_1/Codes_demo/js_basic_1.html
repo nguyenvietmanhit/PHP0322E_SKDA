@@ -1,0 +1,115 @@
+js_basic_1.html
+<!-- 
+Chuyên đề 2: Kỹ thuật lập trình, là các kiến thức cơ
+bản của 1 ngôn ngữ lập trình, học cách tiếp cận với các
+kiến thức này
+- Có rất nhiều ngôn ngữ lập trình -> CD2 dùng Javascript để demo
+các kiến thức cơ bản của ngôn ngữ lập trình
+1/ Javascript
+- Ko phải là ngôn ngữ lập trình Java
+- Là ngôn ngữ bên phía client/trình duyệt, giúp tương tác với
+trình duyệt
+- Hiện này Javascript cũng là 1 ngôn ngữ server (giống PHP, Java)
+thông qua thư viện NodeJs
+- Học Javascript có 2 hướng học:
++ Học kỹ thuật lập trình (CD2)
++ Học cách tương tác với trình duyệt (CD3)
+2/ Kỹ thuật lập trình (chung cho các ngôn ngữ lập trình)
+- Kỹ thuật comment code:
+Là giải thích cho code, ko hiển thị với user
+Sử dụng phím tắt sau để comment code trong mọi IDE code:  Ctrl /
+- Tạo vùng làm việc:
+Javascript chạy trong file .html
+Code trong cặp thẻ script
+ -->
+
+
+<!-- <h1>HEllo manhnv</h1> -->
+
+<script type="text/javascript">
+	//1/ Vùng làm với Javascript, đây là cách nhúng trực tiếp
+	// trong file .html
+	alert('Hello manhnv');
+	// 2 - Biến trong Javascript
+	// + Là 1 vùng nhớ để lưu trữ giá trị
+	// + Biến đổi: thay đổi giá trị của biến bất cứ lúc nào
+	// + Minh họa: biến là hộp
+	// - Cú pháp khai báo biến:
+	// + Sử dụng các từ khóa trước tên biến: var, let, const
+	var name; // cơ bản dùng var
+	// let age;
+	const PI = 3.14;
+	// + Tên biến bắt buộc phải bắt đầu với ký tự chữ hoặc _
+	var address = 'HN';
+	// var 1name = 'manhnv';
+	var _name = 'manhnv';
+	// + Tên biến ko đc chứa ký tự đặc biệt, là các ký tự
+	// ko phải chữ hoặc số hoặc _ $
+	// var nam@e = 'manhnv';
+	// + Tên biến ko đc trùng từ khóa của ngôn ngữ
+	//var var = 123;
+	// + Tên biến phải có ý nghĩa, nếu biến gồm nhiều từ
+	//thì các từ ngăn cách bởi _
+	// var x = 1;
+	// var y = 2;
+	var number1 = 1;
+	var number2 = 2;
+	var banlatraihaygai = 1; // ko nên
+	var ban_la_trai_hay_gai = 1;
+	// + Biến phân biệt hoa thường (Javascript, PHP)
+	var name = 'manhnv';
+	var naMe = 'manhnv'; 
+	// VD: khai báo và hiển thị biến ra trình duyệt
+	var name = 'manhnv';
+	var age = 32;
+	var address = 'Hà Nội';
+	// Để nối chuỗi với biến trong JS sử dụng +
+	document.write('Tên của bạn: ' + name);
+	document.write('Tuổi của bạn: ' + age);
+	document.write('Địa chỉ của bạn: ' + address);
+
+	// 3 - Kiểu dữ liệu
+	// Dùng để phân loại dữ liệu với nhau
+	// + number: lưu giá trị là số, với JS bao gồm cả
+	//số nguyên và số thập phân
+	var number1 = 123;
+	var number2 = -1.23;
+	// Hàm debug, hiển thị kết quả debug ở tab console của
+	//trình duyệt:
+	console.log(typeof number1); //number
+	console.log(typeof number2); 
+	// + string: lưu giá trị là chuỗi, đc bao bởi cặp ký tự
+	// nháy đơn hoặc kép
+	var str1 = '123';
+	var str2 = "123";
+	var str3 = "Hello, 'manhnv'";//
+	var str4 = str1 + str2;
+	console.log(str4); //123123
+	console.log(str3); //Hello, 'manhnv'
+	console.log(typeof str1); //string
+	// + boolean: lưu giá trị đúng/sai là true hoặc false
+	//, 2 giá trị này bắt buộc phải là ký tự thường hết
+	var is_true = true;
+	var is_false = false;
+	console.log(is_true); //bool hoặc boolean
+	//var is_male = True; // báo lỗi
+	// -> 3 kiểu dữ liệu number, string, boolean là 3 kiểu dữ liệu nguyên thủy (có thể tính toán đc)
+	// + undefined: xảy ra khi khai báo biến mà ko gán giá trị
+	var name;
+	console.log(typeof name); //undefined
+	// + null: có 1 giá trị duy nhất là null
+	var name = null;
+	// + array: mảng, lưu đc nhiều giá trị tại 1 thời điểm
+	// với JS coi array như 1 object
+	var arrs = [123, 'string1', true, null, []];
+	console.log(typeof arrs); //array -> object ?
+	// + object: đối tượng
+	var person = {
+		name: 'manhnv',
+		age: 32,
+		study: function() {
+			console.log('study');
+		}
+	};
+	console.log(typeof person); //object
+</script>
