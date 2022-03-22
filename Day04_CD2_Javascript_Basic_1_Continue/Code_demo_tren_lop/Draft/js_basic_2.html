@@ -1,0 +1,196 @@
+<!-- js_basic_2.html -->
+<script type="text/javascript">
+	// 1 / Toán tử
+	// 3 + 5 = 8, số 3, 5 gọi là toán hạng/số hạng, dấu + gọi là toán tử
+	// Toán tử là các ký tự cho phép thao tác trên các toán hạng
+	// a/ Toán tử số học
+	var number1 = 8;
+	var number2 = 3;
+	// Cộng hai số: +
+	console.log(number1 + number2); //11
+	// Trừ: -
+	console.log(number1 - number2); //5
+	// Nhân: *
+	console.log(number1 * number2); //24
+	// Chia: /
+	console.log(number1 / number2); //2.67...
+	// Chia lấy phần dư: %
+	console.log(number1 % number2); //2
+	// Tăng tích lũy: ++
+	number1++; //number1 = number1 + 1;
+	console.log(number1); //9
+	// Giảm tích lũy: --
+	number2--; // number2 = number2 - 1
+	console.log(number2); //2
+	// Vị trí ++ -- khai báo trước/sau biến:
+	// Nếu đứng trước biến, giá trị của biến sẽ bị thay đổi luôn tại thời điểm khai báo
+	// Nếu đứng sau biến, giá trị của biến sẽ bị thay đổi sau khi khai báo biến (đi qua biến thì mới thay đổi)
+	var a = 5;
+	var sum = a++ + ++a; 
+	//      =  5  +   7
+	console.log(sum);//12
+	var x = 5;
+	var sum = x++ * ++x + 2 * --x % 2;
+	//      =  5  *  7  + 2 *  6  % 2 = 35
+	//35 41 37 39
+
+	var x = 5;
+	var sum = x * x  - --x * 2 + x++ - x * ++x;
+	//      = 5 * 5  -   4 * 2 +  4  - 5 *  6; //-9 
+	// -9 -3 -4 
+	var x = -2;
+	var sum = ++x + x++ - --x % 3;
+	//      =  -1 +  -1 -  -1 % 3 = -1
+	//12 -3 -1 
+	// -> các biểu thức trên thì trong PHP rất ít gặp, có thể sẽ gặp khi
+	// nhà tuyển dụng hỏi
+	//b / Toán tử so sánh: so sánh các toán hạng, kết quả trả về là kiểu boolean (true/false)
+	var number1 = 5;
+	var number2 = 3;
+	// So sánh bằng: ==
+	console.log(number1 == number2); //false
+	// So sánh khác: !=
+	console.log(number1 != number2); //true
+	// Ss lớn hơn: >
+	console.log(number1 > number2); //true
+	// Ss lớn hơn hoặc bằng: >=
+	console.log(number1 >= number2); //true
+	// Ss nhỏ hơn: <
+	console.log(number1 < number2); //false
+	// Ss nhỏ hơn hoặc bằng: <=
+	console.log(number1 <= number2); //false
+
+	// c/ Toán tử logic: A có cao hơn B và A có nhiều tuổi hơn B hay ko?
+	// Kết hợp các biểu thức so sánh với nhau -> kết quả trả về vẫn là boolean
+	// + Toán tử và: && AND -> &&
+	// true && true -> true
+	// true && false -> false
+	// false && true -> false
+	// false && false -> false
+	var number1 = 5;
+	var number2 = 4;
+	console.log(number1 > number2 && number1 < 0); //true && false -> false
+	// + Toán tử hoặc: || OR -> ||
+	// true || true -> true
+	// true || false -> true
+	// false || true -> true
+	// false || false -> false
+	console.log(number1 < 0 || number2 < 0); //false || false -> false
+	// + Toán tử phủ định: ! NOT -> !
+	// true -> false
+	// false -> true
+	console.log(!(number1 > number2)); //false
+
+	// d / Toán tử gán: gán giá trị bên phải toán tử cho biến bên trái
+	// Phép gán: =
+	var number = 5;
+	// Cộng tích lũy: +=
+	number += 3; //number = number + 3 = 8
+	// Trừ tích lũy: -=
+	number -= 2; //number = number - 2 = 6
+	// Nhân tích lũy: *=
+	number *= 2; //12
+	// Chia tích lũy: /=
+	number /= 4; //3
+	// Chia lấy dư tích lũy: %=
+	number %= 2 ;//1
+
+	// 2 / Câu lệnh điều kiện: if ,switch case, else, else if
+	// - Ra quyết định, đi theo hướng nào dựa vào điều kiện
+	// - Kiểm tra biểu thức điều kiện, nếu biểu thức đúng thì làm gì, nếu sai thì làm gì ...
+	// + Câu lệnh if: chỉ kiểm tra 1 trường hợp duy nhất: nếu điều kiện đúng thì làm gì
+	var number = 5;
+	if (number > 0) {
+		console.log('Number lớn hơn 0');
+	}
+	// + Câu lệnh if...else: 2 trường hợp: nếu đúng thì làm gì, nếu sai thì làm gì
+	if (number > 0) {
+		console.log('Number lớn hơn 0');
+	} else {
+		console.log('Number nhỏ hơn hoặc bằng 0');
+	}
+	// + Câu lệnh if...else if ...else: >= 3 trường hợp
+	// VD: check điểm tương ứng với học lực gì:
+	// 8 - 10: giỏi, 6.5 - 8: khá, 5 - 6.5: TB, còn lại là yếu
+	var point = 20;
+	if (point >= 8 && point <= 10) { //true && false = false
+		console.log('Giỏi');
+	} else if (point >= 6.5) { //true
+		console.log('Khá');
+	} else if (point >= 5) {
+		console.log('TB');
+	} else {
+		console.log('Yếu');
+	}
+
+	// khá
+	// + Biểu thức switch case
+	// cho ngày bằng số, hiển thị ngày bằng chũ: 2 -> thứ hai
+	// Dùng if else if
+	var day = 4;
+	if (day == 2) {
+		console.log('Thứ hai');
+	} else if (day == 3) {
+		console.log('Thứ ba');
+	} else if (day == 4) {
+		console.log('Thứ tư');
+	} else {
+		console.log('Không phải thứ 2, 3, 4');
+	}
+	// Dùng switch case:
+
+	var day = 4;
+	// Từ khóa break có tác dụng thoát switch case khi gặp case đúng, ko chạy code
+	//phía sau break nữa -> return
+	switch (day) {
+		case 2: 
+			console.log('Thứ hai');
+			break; 
+		case 3: 
+			console.log('Thứ ba');
+			break;
+		case 4:
+			console.log('Thứ tư');
+			break;	
+		default:
+			console.log('Không phải thứ 2, 3, 4');		
+	}
+	// -> switch case cũng dùng để kiểm tra >= 3 trường hợp như if..elseif ...
+	// -> switch case dễ nhìn hơn if else if
+	// -> tại sao ko dùng switch case thay thế hẳn if .. else if ? 
+	// -> switch case chỉ dùng được khi biểu thức so sánh là so sánh bằng
+
+	var day = 2; 
+	// 
+	// if (day == 2 || day == 3) {
+	// 	console.log('Thứ ba');
+	// }
+	switch (day) {
+		case 2: 
+			// break;
+		case 3: 
+			console.log('Thứ ba');
+			break;
+		case 4:
+			console.log('Thứ tư');
+			break;	
+		default:
+			console.log('Không phải thứ 2, 3, 4');		
+	}
+	// Thứ ba
+
+	// 3 - Toán tử điều kiện: là cú pháp viết tắt của câu lệnh if...else với logic đơn giản
+	var number = 5;
+	// Dùng if else
+	if (number % 2 == 0) {
+		console.log('Là số chẵn');
+	} else {
+		console.log('Là số lẻ');
+	}
+	//Dùng toán tử điều kiện
+	var message = number % 2 == 0 ? 'Là số chẵn' : 'Là số lẻ';
+	console.log(message);
+
+	// 4 / Vòng lặp
+
+</script>
