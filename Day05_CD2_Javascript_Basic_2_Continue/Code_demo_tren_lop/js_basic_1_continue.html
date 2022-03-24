@@ -1,0 +1,200 @@
+<!-- js_basic_1_continue.html -->
+<script type="text/javascript">
+	// 1 - Toán tử
+	// + Toán tử số học
+	// + Toán tử so sánh:
+	// So sánh 2 toán hạng của toán tử -> return true/false
+	var number1 = 1;
+	var number2 = 3;
+	// So sánh bằng ==
+	var result1 = number1 == number2; //false
+	// So sánh khác !=
+	var result2 = number1 != number2; //true
+	// So sánh lớn hơn >
+	var result3 = number1 > 0; //true
+	// So sánh lớn hơn hoặc bằng >=
+	var result4 = number1 >= 1; //true
+	// So sánh nhỏ hơn <
+	var result5 = number1 < 0; //false
+	// So sánh nhỏ hơn hoặc bằng
+	var result6 = number1 <= 1; //true
+
+	// + Toán tử logic: kết hợp các biểu thức so sánh lại với nhau
+	var number1 = 1;
+	var number2 = 2;
+	// Toán tử và AND &&: chỉ trả về true khi cả 2 biểu thức cùng true, và ngược lại là false
+	// true && true -> return true
+	// true && false -> return false
+	// false && true -> return false
+	// false && false -> return false
+	var result1 = (number1 > 0) && (number2 == 2); //true
+	// Toán tử hoặc OR ||: chỉ trả về false khi cả 2 biểu thức cùng false, và ngược lại là true
+	// false || false -> false
+	// false || true -> true
+	// true || false -> true
+	// true || true -> true
+	var number1 = 1;
+	var number2 = 2;
+	var result2 = (number1 > 0) || (number1 == 0); //true
+	// Toán tử phủ định NOT !
+	// true -> false
+	// false -> true
+	var result3 = !(number1 > 0); //false
+	var result4 = !((number1 < 0) || (number1 == 0)); //true           
+	// + Toán tử gán: gán giá trị bên phải của toán tử cho biến bên trái        
+	// Phép gán =
+	var number = 5;       
+	// Gán theo cộng tích lũy +=
+	number += 2; // number = number + 2  = 7
+	// Trừ tích lũy -=
+	number -= 1; // number = number - 1 = 6  
+	// Nhân tích lũy *=
+	number *= 2; //12
+	// Chia tích lũy /=
+	number /= 4; //3
+	// Chia lấy dư tích lũy %=
+	number %= 2; //1 
+	// VD:
+	var number = 5;
+	number += number++ - --number * number++;
+	number = number + (number++ - --number * number++);
+	       //  5    + (   5   -  5 * 5                       )
+	// 13 15  -6 -15 -> -15
+	var number = -1;
+	var sum = number-- * number++ % 2;
+	//           (-1    *    -2) % 2
+	// 0
+	// 2 - Câu lệnh điều kiện: đưa ra các điều kiện và quyết định đi theo hướng của bạn: if và switch case
+	// + Câu lệnh điều kiện liên quan đến if: if else elseif
+	// Câu lệnh if: chỉ kiểm tra duy nhất 1 trường hợp là nếu kiện đúng thì thực hiện
+	var number = 3;
+	if (number > 0) {
+		console.log('Biến number > 0');
+	}
+	// Câu lệnh if else: dùng cho 2 trường hợp biểu thức điều kiện đúng và sai
+	if (number % 2 == 0) {
+		console.log('Number là số chẵn');
+	} else {
+		console.log('Number là số lẻ');
+	}
+	// Câu lệnh if else if (else): dùng cho 3 trường hợp trở lên
+	var point = 9;
+	if (point >= 8.0 && point <= 10) {
+		console.log('Giỏi');
+	} else if (point >= 6.5 && point < 8.0) {
+		console.log('Khá');
+	} else if (point >= 5.0 && point < 6.5) {
+		console.log('TB');
+	} else {
+		console.log('Yếu');
+	}
+	// + Câu lệnh điều kiện switch case:
+	// Dùng if
+	var day = 2;
+	if (day == 2) {
+		console.log('Thứ hai');
+	} else if (day == 3) {
+		console.log('Thứ 3');
+	} else if (day == 4) {
+		console.log('Thứ 4');
+	} else if (day == 5) {
+		console.log('Thứ 5');
+	} else {
+		console.log('Không phải thứ 2, 3, 4, 5');
+	}
+	// Dùng switch case:
+	var day = 3;
+	switch (day) {
+		case 2: console.log('Thứ hai');break;
+		case 3: console.log('Thứ ba');break;
+		case 4: console.log('Thứ tư');break;
+		case 5: console.log('Thứ năm');break;
+		default: console.log('Không phải thứ 2, 3, 4, 5'); 
+	}
+	// Switch case dễ nhìn hơn if else if
+	// Switch case chỉ dùng cho so sánh bằng, ưu tiên dùng switch case thay thế 
+
+	// 3/   Vòng lặp: giúp thực thi 1 đoạn code nhiều lần
+	// VD: log ra 500 lần màn hình text: "500 ae"
+	// For, while, do while 
+	// + For: là vòng lặp xác định trước đc số lần lặp
+	// Hiển thị từ 1 đến 10
+	// Biểu thức đầu tiên: khởi tạo giá trị ban đầu của biến lặp 
+	// Biểu thức thứ hai: điều kiện lặp, dừng vòng lặp
+	// Biểu thức thứ 3: tránh vòng lặp vô hạn bằng cách thay đổi lại biến lặp ban đầu sau mỗi vòng lặp
+	for (var i = 1; i <= 10; i++) {
+		console.log(i);
+	}
+	//12345678910     
+	// + While: vòng lặp ko xác định trc số lần lặp
+	var j = 1;
+	while (j <= 10) {
+		console.log(j);
+		j++;
+	}
+	// 12345678910
+	// + Do while: giống while, tuy nhiên luôn chạy logic code ít nhất 1 lần cho dù điều kiện sai ngay từ đầu
+	do {
+		console.log('vòng lặp do while');
+	} while (1 < 0);
+
+	// 4 - Từ khóa break , continue trong vòng lặp
+	// Dùng can thiệp quy trình lặp
+	// - Break: thoát hẳn vòng lặp, bỏ qua tất cả lần lặp còn lại, đồng thời ko thực thi code phía sau của break
+	for (var i = 1; i <= 10; i++) {
+		if (i == 5 || i == 3) {
+			break;
+		}
+		console.log(i);
+	
+	}
+	//12
+	// - Continue: bỏ qua lần lặp hiện tại -> ko thực thi code phía sau từ khóa continue, nhảy tới lần lặp kế tiếp
+	for (var i = 1; i <= 10; i++) {
+		console.log(i);
+		if (i <= 10) {
+			continue;
+		}
+	}
+	//1
+
+	// 5 - Demo bài tập
+	// Viết hàm kiểm tra số nguyên tố
+	// Số nguyên tố là số chỉ chia hết cho 1 và chính nó
+	// - Cần xác định tham số nếu có của hàm này: 1 tham số chính là số cần kiểm tra
+	// - Cần xác định kiểu dữ liệu trả về của hàm này: boolean
+	function isPrime(number) {
+		// number = 15
+		// Mặc định là số nguyên tố
+		var is_prime = true;
+
+		// Xử lý logic để check khi nào number ko phải số nguyên tố -> is_prime = false
+		// Lặp từ 2 -> 14, tối ưu nhất là chỉ cần lặp đến căn bậc 2 của số đó
+		for (var i = 2; i <= Math.sqrt(number); i++) {
+			// Nếu number chia hết cho i thì chắc chắn number ko phải số nguyên tố
+			if (number % i == 0) {
+				is_prime = false;
+				// Sau khi check đc ko phải số nguyên tố, thoát vòng lặp
+				break;
+			}
+		}
+
+		return is_prime;
+	}
+	// - Thuật toán: là phương pháp để code tối ưu nhất
+	// Tham khảo các thuật toán: sắp xếp: nổi bọt, nhị phân ...
+	var is_check1 = isPrime(15);
+	console.log(is_check1); //false
+
+	// Viết hàm chuyển đổi giờ và phút sang giây
+    // VD: 1h30p -> 3630 giây
+    // - Xác định tham số cho hàm: 2 tham số là giờ và phút
+    // - Xác định kiểu dữ liệu trả về: number
+    function convertTime(hour, minute) {
+    	var second = hour * 3600 + minute * 60;
+    	return second;
+    }
+
+    var result1 = convertTime(1, 30);
+    console.log(result1);
+</script>
