@@ -1,0 +1,42 @@
+<!-- variable_scope.html -->
+
+<script type="text/javascript">
+	// Phạm vi của biến trong Javacsript
+	// - Là vòng đời của 1 biến từ khi sinh ra đến lúc mất đi
+	// - Với Js chia làm 3 loại: (Js nâng cao)
+	// + Cục bộ / Local , là biến dc định nghĩa bên trong hàm, bên ngoài hàm biến đó sẽ ko tồn tại
+	function testLocal() {
+		// Phạm vi cục bộ
+		var number = 1;
+		console.log("Bên trong hàm, biến number = " + number);
+	}
+	testLocal(); //Bên trong hàm, biến number = 1
+	// console.log(number); // báo lỗi
+	// + Toàn cục / Global: là biến đc khai báo bên ngoài hàm, có thể sử dụng ở mọi nơi, kể cả bên trong hàm
+	var g1 = 5; // là biến toàn cục
+	function testGlobal() {
+		console.log(g1);
+	}
+	testGlobal(); //5
+	// + Khối / Block
+	for (var i = 1; i <= 5; i++) {
+		console.log("Bên trong khối for, biến i = " + i);
+	}
+	//
+	// ...
+	// ...
+
+	console.log('BÊn ngoài khối for, biến i = ' + i); //6, do khi khai báo khối for dùng var i = 1 -> biến i là biến toàn cục
+	// mong muốn biến i chỉ hoạt động bên trong khối for, bên ngoài sẽ ko tồn tại!
+	// -> sửa lại code như sau, khai báo biến với từ khóa let
+	for (let j = 1; j <= 5; j++) {
+		console.log('Bên trong khối for, biến j =' + j);
+	}
+	// console.log('Bên ngoài khối for, biến j = ' + j);
+	// -> từ khóa let dùng để khai báo biến bên trong 1 khối/block lệnh
+	// - Từ khóa const: hoạt động giống như let, chỉ khác let ở 1 điểm duy nhất: ko thể gán lại giá trị cho nó
+	let name = 3;
+	name = 2;
+	const age = 5; // const hoạt động 1 hằng trong lập trình: 1 khi đã khai báo thì ko thể gán lại đc giá trị
+	// age = 3; // đoạn này sẽ báo lỗi
+</script>
