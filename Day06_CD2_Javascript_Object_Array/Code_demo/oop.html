@@ -1,0 +1,99 @@
+<!-- oop.html -->
+<script type="text/javascript">
+	// Các thuật ngữ cơ bản của lập trình hướng đối tượng
+	// OOP - Object Oriented Programming
+	// - Phương pháp code truyền thống:
+	// + Code theo phương pháp tuyến tính: nghĩ gì code nấy
+	// Ví dụ: tính tổng 2 số bất kỳ
+	var number1 = 4;
+	var number2 = 5;
+	var sum = number1 + number2;
+	console.log('Tổng 2 số = ' + sum);
+	// + Code theo phương pháp thủ tục: viết hàm
+	function sum1(number1, number2) {
+		return number1 + number2;
+	}
+	console.log(sum1(1, 2)); //3
+	// + Code theo phương pháp OOP: thay đổi tư duy code, lấy đối tượng làm trung tâm, thay vì lấy chức năng làm trung tâm như thủ tục
+	class NumberTest {
+		number1;
+		number2;
+		constructor(number1, number2) {
+			this.number1 = number1;
+			this.number2 = number2;
+		};
+
+		sum() {
+			return this.number1 + this.number2;
+		}
+	}
+	var obj_test = new NumberTest(1, 2);
+	console.log(obj_test.sum()); //3
+
+	// 2 - CÁc thuật ngữ trong OOP:
+	// + Class - Lớp: là 1 khuôn mẫu cho các đối tượng sinh ra từ nó
+	// VD: 1 class 1 bản vẽ thiết kế ngôi nhà
+	// Quy tắc khai báo tên class: viết hoa ký tự đầu tiên của từng từ
+	class Student {
+
+	}
+	// + Object - Đối tượng: là các thực thể cụ thể đc sinh ra từ class
+	// VD: các ngôi nhà đc xây từ bản vẽ thiết kế chính là các đối tượng của class đó
+	var obj_student1 = new Student();
+	console.log(typeof obj_student1); //object
+	// Một số cách tạo object trong JS
+	// + Tạo bằng kiểu nguyên thủy (literal)
+	var obj1 = {
+		name: 'manhnv',
+		age: 32,
+		address: 'HN'
+	};
+	// + Tạo đối tượng bằng hàm constructor, tương đương 1 class:
+	function Book(title, amount) {
+		this.title = title;
+		this.amount = amount;
+	}
+	// + Thuộc tính của class: là đặc điểm của đối tượng sinh bởi class
+	class Student1 {
+		// Khai báo các thuộc tính
+		name;
+		age;
+		address;
+	}
+	// + Phương thức của class: là các hành vi của đối tượng sinh ra bởi class
+	class Book1 {
+		// Khai báo các phương thức
+		add() {
+			console.log('Add book');
+		}
+		edit(id) {
+			console.log('Edit book: ' + id);
+		}
+		list() {
+			console.log('List book');
+		}
+		delete(id) {
+			console.log('Delete book: ' + id);
+		}
+	}
+	// Về cơ bản: thuộc tính trong class nó là biến trong code thuần
+	//, phương thức trong class là hàm trong code thuần
+	// + Phương thức khởi tạo của class: khởi tạo các giá trị mặc định cho chính thuộc tính của class đó, đc chạy đầu tiên ngay khi có đối tượng sinh ra từ class, mà ko cần gọi tường minh
+	class Book2 {
+		title;
+		amount;
+
+		constructor() {
+			// Bên trong class để truy cập đến nội bộ của nó, dùng từ khóa this
+			this.title = 'Sách 1';
+			this.amount = 4;
+		}
+	}
+	// Tạo obj từ class trên
+	var book = new Book2();
+	console.log(book);
+	// Cú pháp để object truy cập đc thuộc tính/phương thức của class dùng ký tự .
+	console.log(book.title); //Sách 1
+	console.log(book.amount); //4
+	console.log(console);
+</script>

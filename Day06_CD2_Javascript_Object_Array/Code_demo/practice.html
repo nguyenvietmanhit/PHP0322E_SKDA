@@ -1,0 +1,32 @@
+<!-- practice.html -->
+<script type="text/javascript">
+	// Viết hàm giải phương trình bậc 2 với JS
+	// ax2 + bx + c = 0;
+	// - Xác định hàm sẽ viết:
+	// + Tham số của hàm là gì : 3 tham số
+	// + Kiểu dữ liệu trả về: tại thời điểm hiện tại return string, thực tế nên return array
+	function equationLevel2(a, b, c) {
+		// Xác định delta:
+		var delta = b * b - 4 * a * c;
+		// Có 3 case cần xử lý
+		if (delta < 0) {
+			return 'Phương trình vô nghiệm';
+		}
+		if (delta == 0) {
+			var result = -b / (2 * a);
+			return 'Phương trình có 1 nghiệm kép: ' + result;
+		}
+		var result1 = (-b + Math.sqrt(delta)) / 2 * a;
+		var result2 = (-b - Math.sqrt(delta)) / 2 * a;
+		return 'Phương trình có 2 nghiệm phân biệt: x1 = ' + result1
+		+ ', x2 = ' + result2;
+	}
+	// Gọi hàm
+	var a = 1;
+	var b = 2;
+	var c = -3;
+	// 1x2 + 2x - 3 = 0
+	console.log('Giải phương trình: ' + a + 'x2 + ' + b + 'x + ' + c + ' = 0');
+	// var result = equationLevel2(a, b, c);
+	console.log(equationLevel2(a, b, c));
+</script>

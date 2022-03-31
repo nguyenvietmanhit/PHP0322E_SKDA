@@ -1,0 +1,36 @@
+<!-- array.html -->
+<script type="text/javascript">
+	// Mảng trong Javascript
+	// - Là biến đặc biệt có thể chứa đc đồng thời nhiều giá trị 
+	// VD: khai báo biến lưu tên 500 ae
+	var names = ['manhnv', 123, true, undefined, null, []];
+	// - Với JS, mảng coi như 1 object
+	// - Thuật ngữ liên quan đến mảng:
+	// + Element - phần tử mảng: là các thành phần của mảng
+	// + Index / Key của phần tử mảng: là chỉ số nhận dạng phần tử mảng, mặc định key bắt đầu từ số 0, tăng dần lên 1
+	// + Value của phần tử mảng: giá trị tương ứng với key của phần tử mảng 
+	// VD: Phần tử mảng đầu tiên: key = 0, value = 'manhnv'
+	// Phần tử tiếp theo: key = 1, value = 123
+	// - Kiểu mảng:
+	// + Mảng 1 chiều: là mảng mà ko có bất cứ 1 phần tử mảng nào là 1 mảng
+	var numbers = [1, 2, 3, 4, 5, 6];
+	// Cách truy xuất phần tử mảng thủ công: luôn cần biết key
+	console.log(numbers[0]); //1
+	console.log(numbers[5]); // 6
+	//console.log(numbers[6]); // ? báo lỗi truy xuất phần tử mảng với key ko tồn tại
+	// Truy xuất dùng vòng lặp
+	// Lấy ra số phần tử của mảng:
+	var count = numbers.length;
+	for (var key = 0; key < count; key++) {
+		console.log(numbers[key]);
+	}
+	// + Mảng đa chiều: mảng trong mảng, có 1 phần tử mảng là 1 mảng, số chiều của mảng là độ sâu của mảng tương ứng với phần tử mảng đó
+	var arrs = [
+		'manhnv',
+		123,
+		[1, 2, 3]
+	];
+	// Dùng cách thủ công để truy xuất phần tử trong mảng đa chiều:
+	console.log(arrs[2][2]); //3
+	// + Một số hàm thao tác với mảng trong JS
+</script>
