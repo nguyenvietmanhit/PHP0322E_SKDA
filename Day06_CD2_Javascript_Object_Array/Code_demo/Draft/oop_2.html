@@ -1,0 +1,154 @@
+<script type="text/javascript">
+	// Lập trình hướng đối tượng OOP
+	// - 1 Object là thứ gì đó mà chúng ta có thể tương tác được, object có đặc điểm/thuộc tính và hành vi/phương thức
+	// - Objec là trái tim của OOP, ko chỉ với JS và còn của các ngôn ngữ khác như PHP, Java
+	// - Tư duy của OOP khác rất nhiều so với tư duy lập trình khác
+	// - VD: đối tượng sách thì sẽ có các thuộc tính tên, số trang, nhà xuất bản
+	// Có các phương thức: thêm, sửa, xóa, liệt kê:
+	// - Một số các khái niệm thường được sử dụng khi nói về OOP:
+	// + Đối tượng, thuộc tính, phương thức
+	// + Class
+	// + Tính đóng gói
+	// + Trừu tượng
+	// + Kế thừa
+	// + Đa hình
+	//
+
+	// 1/ Đối tượng 
+	// - Tạo object bằng kiểu nguyên thủy: object literal, nhược điểm là khi tạo nhiều đối tượng phải copy paste
+	var book = {
+		title: "SGK",
+		author: "Nguyen Viet Manh",
+		year: "2018",
+		listBook: function() {
+			console.log('List book');
+		},
+		addBook: function(id) {
+			console.log('Add Book với id = ' + id);
+		},
+		editBook: function(id) {
+			console.log('Edit Book với id = ' + id);
+		},
+		deleteBook: function(id) {
+			console.log('Delet Book với id = ' + id);
+		},
+	};
+	// Truy cập thuộc tính/phương thức sử dụng ký tự .
+	console.log(book.title);
+	book.listBook();
+	book.editBook(5);
+	// - Tạo object bằng hàm khởi tạo: object constructor, ưu điểm là có thể tạo nhiều đối tượng chung thuộc tính và phương thức -> có tính sử dụng lại
+	// Nếu dùng theo kiểu object literal sẽ như sau:
+	var book = {
+	   title: "Hippie",    
+	   author: "Paulo Coelho",  
+	   year: "2018"
+	}
+	var book1 = {
+	   title: "The Alchemist",    
+	   author: "Paulo Coelho",  
+	   year: "1988", 
+	}
+
+
+	// Cú pháp như 1 hàm bình thường, tuy nhiên bên trong sử dung từ khóa this sẽ làm cho hàm này như 1 class
+	function Book(title, author, year) {
+		this.title = title;
+		this.author = author;
+		this.year = year;
+	}
+
+	// Khởi tạo đối tượng 
+	var book1 = new Book('Title 1', 'Author1', 2021); // tạo ra 1 prototype mới là Book.prototype, là con của Object.prototype
+	console.log(book1);
+	var book2 = new Book('Title 2', 'Author2', 2022);
+	console.log(book2);
+	console.log(book1 instanceof Book);
+
+	// - Tạo bằng Object
+	var Book1 = {
+		summary: function() {
+			console.log(`${this.title} is writen by ${this.author}`);
+		}
+	}
+
+	var book1 = Object.create(Book1);
+	book1.author = 'nvmanh';
+	book1.title = 'SGK';
+
+	book1.summary();
+
+	// 2 - Class
+	// - Là bản thiết kế cho các đối tượng cụ thể
+	// Javascript ban đầu chưa hỗ trợ từ khóa class, mà sẽ tạo 1 class bằng construct function
+	// var Book2 = function(name) {
+	// 	this.name = name;
+	// }
+
+	// var Book3 = function (name) {
+	// 	Book.call(this, name)
+	// }
+
+	// Book3.prototype = Object.create(Book.prototype)
+	// const book5 = new Book3();
+	// console.log(Book2);
+	// console.log(book5);
+	// Sử dụng từ khóa class của ES6
+
+	class BookClass {
+		constructor(name) {
+			this.name = name;
+		}
+	}
+
+	class NewBook extends BookClass {
+		constructor(name) {
+			super(name);
+		}
+	}
+
+	const Book11 = new NewBook('hello');
+	console.log(Book11.name);
+
+	class BookClass2 {
+		constructor(title, author) {
+			this.title = title;
+			this.author = author;
+		}
+
+		summary() {
+			console.log(`${this.title} written by ${this.author}`);
+		}
+	}
+
+	const book_class2 = new BookClass2('sgk', 'nvmanh');
+	console.log(book_class2);
+	book_class2.summary();
+
+	// 3 -  Tính đóng gói / Encapsulation
+	// + Ẩn thông tin hoặc data, là khả năng che giấu thông tin của obj khi thực hiện chức năng mà ko để lộ ra ngoài.
+	// Nói cách khác, các biến chỉ có sẵn bên trong function, bên ngoài sẽ ko nhìn thấy / private
+	const BookEn = function(t, a) {
+		// Trong ví dụ trên title và author chỉ hiển thị bên trong function Book, đối tượng bên ngoài ko hề biết đến sự tồn tại của 2 thông tin này -> có tính đóng gói
+		let title = t;
+		let author = a;
+
+		return {
+			summary: function() {
+				console.log(`${title} written by ${author}`);
+			}
+		}
+	}
+
+
+	const book_en = new BookEn('tttt', 'aaa');
+	console.log(book_en.title);
+	book_en.summary();
+
+	// 4 - Tính trừu tượng / Abstraction
+	// + Sử dụng cho kế thừa, ẩn việc thực thi chi tiết, thay vào đó chỉ show các tính năng cần thiết tới nơi gọi nó
+    // 5 - Tính đa hình
+    // Đối với tính đa hình và tính trừu tượng, việc áp dụng 2 tính chất này trong Javascript là không rõ ràng
+    //Việc áp dụng lập trình hướng đối tượng vào JavaScript là tương đối khó
+
+</script>

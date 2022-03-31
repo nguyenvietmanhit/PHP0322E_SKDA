@@ -1,0 +1,121 @@
+<!-- demo_array.html -->
+
+<script type="text/javascript">
+	// - Mảng 
+	// + Là 1 biến có thể lưu đc nhiều hơn 1 giá trị tại 1 thời điểm
+	// VD: Lưu tên của 5 người?
+	var name1 = 'A';
+	var name2 = 'B';
+	var name3 = 'C';
+	var name4 = 'D';
+	var name5 = 'E';
+
+	// Khai báo 1 mảng có 5 phần tử
+	var arr1 = ['A', 'B', 'C', 'D', 'E'];
+	// + Cú pháp khai báo mảng:
+	var arr2 = [1, 2, 'a', true, null]; //[] thông dụng
+	var arr3 = new Array(1, 2, 'a', true, null); // ít dùng hơn
+	// + Thuật ngữ khi nói về mảng: key/index + value/element
+	// - Key/index của mảng là chỉ số để nhận biết phần tử mảng
+	// - Value/element là phần tử mảng, đc xác định thông qua key tương ứng
+	var arr4 = ['a', 'b', 'c', 'd', 0]; //5 phần tử mảng
+	// + Phần tử mảng đầu tiên: key = 0, value = a
+	// + Phần tử thứ 2: key = 1, value = b
+	// + Phần tử thứ 3: key = 2, value = c
+	// + Phần tử thứ 4: key = 3, value = d
+	// + Phần tử thứ 5: key = 4, value = 0
+	// - Cách lấy giá trị của phần tử mảng: luôn phải biết key thì mới lấy đc giá trị
+	var arr5 = [1, 2, 3, 'a', 'b', 'c'];
+	console.log(arr5[4]); //b
+	console.log(arr5[1]); //2
+	console.log(arr5[10]); //undefined
+	// + Mảng trong JS thì key luôn luôn là số, bắt đầu từ 0
+	// - Mảng đa chiều: mảng trong mảng
+	var arr6 = [
+		'a', // k = 0
+		'b', // k = 1
+		[1, 2, 3] // k = 2
+	]; // mảng 2 chiều
+	// Lấy giá trị trong mảng đa chiều tuân theo quy tắc: phải biết key thì mới lấy đc
+	console.log(arr6[1]); //b
+	console.log(arr6[2][2]); // 3
+	// - Một số thao tác với mảng:
+	// + Kiểm tra kiểu dữ liệu của mảng: typeof, instanceof
+	var arr = ['a', 'b', 'c', 1, 2, 3];
+	console.log(typeof arr); //-> object, đây là đặc thù của Javascript, JS đối xử với mảng như 1 object
+	// Kiểm tra biến có phải là 1 mảng hay ko?
+	console.log(arr instanceof Array); //true
+	// + Đếm phần tử mảng:
+	var length = arr.length; // đối tượng arr truy cập thuộc tính length
+	console.log(length); //6
+	// + Lặp mảng:
+	var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+	// Viết thủ công:
+	//arr1[0];//1
+	//arr1[1];//2
+	// ...
+	var count = arr1.length; //6
+	var result = '';
+	for (var i = 0; i < 6; i++) {
+		//console.log("Phần tử có key = " + i + ", value = " + arr1[i]);
+		result += arr1[i];
+		// Nếu là phần tử cuối cùng thì ko nối thêm -
+		if (i == 5) {
+			break;
+		}
+		result += ' - '; 
+	}
+	console.log(result);// a - b - c - d - e - f 
+
+	// Sử dụng hàm forEach để lặp mảng
+	var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+	// Hàm callback trong lập trình: chờ hành động trước nó xảy ra xong thì nó mới chạy
+	// , là hàm ko có tên hàm
+	arr1.forEach(function(value, key) {
+		// Code bên trong hàm callback
+		console.log("Key: " + key + ", Value: " + value);
+	});
+
+	// + Thêm phần tử vào cuối mảng:
+	var arr = ['a', 'b', 'c'];
+	// arr[] = 'd';
+	arr.push('d');
+	console.log(arr); //[a, b, c, d]
+	// + Xóa phần tử cuối cùng của mảng:
+	var arr = ['a', 'b', 'c'];
+	arr.pop();
+	console.log(arr); //[a, b]
+	// + Xóa phần tử đầu tiên của mảng:
+	var arr = ['a', 'b', 'c'];
+	arr.shift();
+	console.log(arr); //[b, c]
+	// + Thêm phần tử đầu tiên vào mảng:
+	var arr = ['a', 'b', 'c'];
+	arr.unshift('first');
+	console.log(arr); // [first, a, b, c]
+	// + Lấy key của mảng dựa vào giá trị của phần tử mảng
+	var arr = ['a', 'b', 'c', 'c'];
+	var key = arr.indexOf('c');
+	console.log(key); // 2 , trả về -1 nếu ko tìm thấy
+	// + Xóa phần tử mảng theo key, có xác định số lượng phần tử sẽ xóa tính từ key đó
+	var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+	arr.splice(2, 3); // xóa tổng 3 phần tử tính từ phần tử có key = 2
+	console.log(arr); // [a, b, f]
+	// + Tìm trong mảng có chứa giá trị cho trước hay ko:
+	var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+	var bool1 = arr.includes('a');
+	console.log(bool1); // true
+	// + Chuyển từ mảng thành chuỗi dựa theo ký tự phân tách
+	var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+	var str = arr.join('&');
+	console.log(str); //a&b&c&d&e&f
+	// + Đảo ngược mảng
+	var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+	var arr_1 = arr.reverse();
+	console.log(arr_1); // [f, e ,d, c, b, a]
+	// + Sắp xếp mảng theo thứ tự tăng dần alphabet
+	var arr = [20, 'f', 'b', 'a', 'c', 5, 'g'];
+	var arr_1 = arr.sort();
+	console.log(arr_1); // [a,b,c,f,g]
+
+</script>

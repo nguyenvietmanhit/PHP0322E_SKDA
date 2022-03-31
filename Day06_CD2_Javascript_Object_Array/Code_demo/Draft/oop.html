@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    class Car {
+        name = 2;
+        year = 1;
+        constructor() {
+            // this.name = name;
+            // this.year = year;
+
+        }
+        age() {
+            let date = new Date();
+            return date.getFullYear() - this.year;
+        }
+    }
+
+    let myCar = new Car();
+    console.log(myCar)
+</script>

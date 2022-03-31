@@ -1,0 +1,74 @@
+<!-- demo_object.html -->
+<script type="text/javascript">
+    // Object trong lập trình
+	// + Object là gì: đối tượng
+	// + Lập trình hướng đối tượng là gì? Là 1 phương pháp lập trình giúp cấu trúc hệ thống 1 cách dễ dàng hơn so với lập trình kiểu truyền thống/thủ tục/cấu trúc ( viết hàm) , khó hiểu khó tiếp cận , lấy đối tượng làm trọng tâm để phân tích ra thuộc tính/đặc điểm và phương thức/hành vi của đối tượng đó
+	// VD về cách tư duy về lập trình thủ tục và hướng đối tượng: bài toán quản lý sách: thêm, sửa, xóa, liệt kê sách
+	// + Code theo lập trình thủ tục, sử dụng các hàm gọi qua lại nhau để giải quyết bài toán
+	// function addBook() {
+	// 	// Code thêm sách
+	// }
+	// function editBook(id) {
+	// 	// Code sửa sách
+	// }
+	// function deleteBook(id) {
+	// 	// Code xóa sách
+	// }
+	// function listBook() {
+	// 	// Code liệt kê sách
+	// }
+	// Code theo lập trình hướng đối tượng: lấy đối tượng làm trọng tâm để phân tích
+	// class Book {
+	// 	// Các thuộc tính/đặc điểm của sách
+	// 	var name;
+	// 	var amount;
+	// 	var publish_date;
+	// 	// Phương thức/hành vi 
+
+	// 	function addBook() {
+	// 	// Code thêm sách
+	// 	}
+	// 	function editBook(id) {
+	// 		// Code sửa sách
+	// 	}
+	// 	function deleteBook(id) {
+	// 		// Code xóa sách
+	// 	}
+	// 	function listBook() {
+	// 		// Code liệt kê sách
+	// 	}
+	// }
+
+	// -> OOP có hướng tiếp cận thực tế hơn 
+
+	// - OBJECT 
+	// + Là đối tượng trong Lập trình hướng đối tượng
+	// + Object sẽ thuộc tính/property và phương thức/method
+	console.log('hello');
+	// console.log(console); // đối tượng console là object có sẵn của Javascript
+	// console.info('abc');
+	// + Trong JS dùng ký tự . để truy cập thuộc tính/phương thức của đối tượng
+	console.log(window.alert('hello'));// Đối tượng window gọi đến phương thức alert
+	// + Khai báo object:
+	// + Object mô tả thông tin tốt nhất so với các kiểu dữ liệu khác:
+	// obj1 có 3 thuộc tính và 1 phương thức
+	// C1: hay dùng cách 1 hơn
+	var obj1 = {
+		name: 'Mạnh',
+		age: 31,
+		address: 'Hà Nội',
+		showName: function() {
+			console.log('Tên của tôi là: ' + this.name);
+		}
+	};
+	console.log(obj1);
+	// C2:
+	var obj2 = new Object();
+	obj2.name = 'Mạnh';
+	obj2.age = 31;
+	obj2.address = 'Hà Nội';
+	obj2.showName = function() {
+		console.log('Tên của tôi là: ' + this.name);
+	}
+	console.log(obj2);
+</script>
