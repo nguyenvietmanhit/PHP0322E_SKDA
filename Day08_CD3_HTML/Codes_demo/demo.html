@@ -1,0 +1,220 @@
+<!-- demo.html -->
+<!-- 1/ Ngôn ngữ HTML
+- Hyper Text Markup Language, là ngôn ngữ dùng
+để tạo ra khung cho trang web
+- Thứ tự học Web: HTML -> CSS -> Javascript -> PHP
+- Học HTML ntn ? học các tên thẻ và cách hiển 
+thị ra màn hình
+- HTML có nhiều phiên bản: HTML4 và HTML5
+- HTML luôn luôn kết hợp với 2 ngôn ngữ là
+CSS và Javascript để tạo ra 1 giao diện web
+2/ Cấu trúc HTML của 1 trang web cơ bản -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8" />
+		<title>Tiêu đề trang web</title>
+	</head>
+	<body>
+		Hello, manhnv
+		<!-- 
+		- DOCTYPE: định nghĩa phiên bản cho trang html
+		- Thẻ html: thẻ đầy đủ, là thẻ gốc của 1 trang web
+		- Thẻ head: thẻ đầy đủ, header của trang, ko hiển thị trong phần nội dung của trình duyệt
+		- Thẻ title: thẻ đầy đủ, tiêu đề của trang
+		- Thẻ meta: thẻ khuyết, hiển thị siêu dữ liệu
+		- Thẻ body: thẻ đầy đủ, nội dung chính hiển thị lên trình duyệt
+		 -->
+		 <!-- abc -->
+		 <!-- h1, h2, h3, h4, h5, h6: thẻ đầy đủ, hiển thị các tiêu đề, tốt cho SEO web -->
+		 <h1>Thẻ heading 1</h1>
+		 <h2>Thẻ heading 2</h2>
+		 <h3>Thẻ heading 3</h3>
+		 <h4>Thẻ heading 4</h4>
+		 <h5>Thẻ heading 5</h5>
+		 <h6>Thẻ heading 6</h6>
+		 <!-- p: thẻ đầy đủ, hiển thị 1 đoạn văn bản - paragraph -->
+		 <p>dsads dsa dsa dsa da dsa ds a dsadsa
+		 dsadsadsadsadsadsadsadsadsadsadsadsa
+		dsadsa dsadsadsadsadsadsadsadsadsadsadsadsa</p>
+		<p>dsads dsa dsa dsa da dsa ds a dsadsa
+		 dsadsadsadsadsadsadsadsadsadsadsadsa
+		dsadsa dsadsadsadsadsadsadsadsadsadsadsadsa</p>
+		<!-- br: thẻ khuyết, xuống dòng - break, trong code html ko hiểu ký tự Enter là xuống dòng -->
+		Chào bạn, tôi là <br />
+		manhnv
+		<!-- hr: thẻ khuyết, hiển thị 1 đường kẻ ngang, horizontal -->
+		<hr />
+		<!-- i: thẻ đầy đủ, in nghiêng text, italic -->
+		<i>In nghiêng</i>
+		<!-- b: thẻ đầy đủ, in đậm, bold -->
+		<b>In đậm</b>
+		<!-- u: thẻ đầy đủ, gạch chân text, underline -->
+		<u>Gạch chân</u>
+		<!-- div: thẻ đầy đủ, tạo ra các khối trên trang (cấu trúc) - division, hay dùng để chứa các thẻ khác -->
+		<div>Thẻ div</div>
+		<!-- span: thẻ đầy đủ, có tác dụng khi kết hợp với CSS để trang trí cho 1 phần tử cùng cấp -->
+		Đây là text 
+		<span style="color: red">
+			với
+		</span>
+		thẻ span
+		<!-- img: thẻ khuyết, hiển thị ảnh, image
+		Một số thuộc tính:
+		+ src: đường dẫn tới file ảnh, có 2 kiểu đường dẫn trong lập trình:
+		Tương đối: đường dẫn so với file hiện tại đang gọi nó -> ưu tiên dùng
+		Tuyệt đối/Vật lý: đường dẫn từ ổ gốc tới file
+		- Copy file ảnh vào cùng cấp với file .html đang code, chú ý đường dẫn tương đối ko có / ở đầu
+		/demo.html
+		/demo.jpg
+		/images/demo.jpg
+		+ title: tiêu đề ảnh khi rê chuột qua ảnh
+		+ alt: text thay thế khi đường dẫn ảnh ko tồn tại
+		+ width: chiều rộng của ảnh, đơn vị px
+		+ height: chiều cao ảnh
+		 -->
+		<img 
+		src="demo.jpg" 
+		title="Ảnh demo" 
+		alt="Text hiển thị khi ảnh ko tồn tại" 
+		width="100px" 
+		height="100px" 
+		/>
+
+		<img src="images/demo.jpg" />
+		<!-- table, tr, th, td: thẻ đầy đủ, tr - table row, th - table heading, td - table data -->
+		<!-- bảng có 3 hàng, mỗi hàng 2 cột -->
+		<table 
+		border="1" 
+		cellspacing="0" 
+		cellpadding="8"
+		>
+			<tr>
+				<th>Tên</th>
+				<th>Tuổi</th>
+				<th>Địa chỉ</th>
+				<th>Lớp</th>
+			</tr>
+			<tr>
+				<!-- Khi gộp cột cần bỏ đi cột tương ứng với số lượng đang gộp -->
+				<td colspan="2">manhnv</td>
+				<!-- <td>32</td> -->
+				<td>HN</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>anv</td>
+				<td rowspan="2">20</td>
+				<td>HCM</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>anv1</td>
+				<!-- <td>201</td> -->
+				<td>HCM1</td>
+				<td>201</td>
+			</tr>
+		</table>
+		<!-- ul, ol, li: đầy đủ, hiển thị danh sách
+		ul - unorder list: ds ko có thứ tự
+		ol - order list: ds có thứ tự
+		li - list item: các item của danh sách -->
+		<ul>
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+		</ul>
+		<ol>
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+		</ol>
+		<!-- a: thẻ đầy đủ, hiển thị 1 link, anchor -->
+		<a href="https://google.vn" target="_blank">
+			Click để tới trang google
+		</a>
+		<!-- button: thẻ đầy đủ, hiển thị 1 nút -->
+		<button>Gửi thông tin</button>
+		<!-- center: thẻ đầy đủ, căn giữa text, thẻ này ko dùng khi học CSS -->
+		<center>Text đc căn giữa</center>
+		<!-- Các thẻ liên quan đến form
+		form: là nơi user tương tác với website, chứa các ô nhập liệu được
+		- Hai thuộc tính cơ bản của form:
+		action: đường dẫn xử lý dữ liệu từ form gửi lên
+		method: phương thức gửi dữ liệu đi: get/post
+		- Form bắt buộc phải phải dùng thẻ form bao ngoài các ô nhập liệu, để đảm bảo chức năng gửi dữ liệu của form/submit form hoạt động được
+		 -->
+		 <form action="" method="GET">
+		 	Nhập tên của bạn:
+		 	<!-- 
+			input: thẻ khuyết, có các thuộc tính cơ bản sau:
+			+ type: kiểu nhập: text, password, radio ...
+			+ name: nhận diện khi xử lý form với PHP hoặc Javascript
+			+ placeholder: text gợi ý chức năng cho input
+			+ value: giá trị mặc định của input
+		 	 -->
+		 	<input 
+		 	type="text" 
+		 	name="fullname" 
+		 	placeholder="Nhập tên của bạn tại đây..."
+		 	value="manhnv" 
+		 	/>
+		 	<br />
+
+		 	Nhập tuổi:
+		 	<input type="number" />
+		 	<br />
+
+		 	Nhập email:
+		 	<input type="email" />
+		 	<br />
+
+		 	Nhập mật khẩu:
+		 	<input type="password" />
+		 	<br />
+
+		 	Chọn giới tính:
+		 	<!-- Với radio, bắt buộc phải khai báo name trùng nhau cho các radio -->
+		 	<input type="radio" name="gender" value="0" /> Nam
+		 	<input type="radio" name="gender" value="1" checked /> Nữ
+		 	<input type="radio" name="gender" value="2" /> Khác
+		 	<br />
+
+		 	Chọn nghề nghiệp:
+		 	<input type="checkbox" value="0" /> Dev
+		 	<input type="checkbox" value="1" checked /> Tester
+		 	<input type="checkbox" value="2" /> BrSE
+		 	<input type="checkbox" value="3" /> PM
+		 	<br />
+
+		 	Tải ảnh đại diện:
+		 	<input type="file" />
+		 	Tải nhiều file:
+		 	<input type="file" multiple />
+		 	<br />
+
+		 	Nhập ghi chú:
+		 	<textarea rows="10" cols="20"></textarea>
+		 	<br />
+
+		 	Chọn quốc gia:
+		 	<select>
+		 		<option>VN</option>
+		 		<option>Mỹ</option>
+		 		<option>Anh</option>
+		 	</select>
+		 	Chọn nhiều quốc gia:
+		 	<select multiple>
+		 		<option>VN</option>
+		 		<option>Mỹ</option>
+		 		<option>Anh</option>
+		 	</select>
+		 	<br />
+
+		 	<!-- Nút submit/gửi thông tin form -->
+		 	<input type="submit" value="Send info" />
+
+		 	<input type="reset" value="Reset form" />
+		 </form>
+	</body>
+</html>
