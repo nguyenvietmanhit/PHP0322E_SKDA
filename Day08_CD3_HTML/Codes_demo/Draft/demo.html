@@ -1,0 +1,246 @@
+<!--
+ demo.html
+HTML CSS Javascript
+CSS -> Bootstrap
+Javascript -> jQuery
+GIỚI THIỆU VỀ HTML
+- HTML: Hyper Text Markup Language
+- Là ngôn ngữ tạo ra khung của trang web
+HTML: dựng phần thô của ngôi nhà
+CSS: sơn, trang trí cho nhà
+Javascript: lắp 1 chuông cửa cho nhà, nếu như có ai bấm chuông
+-> ngôi nhà phản ứng lại = có ng ra mở cửa
+-> học HTML trc -> CSS -> Javascript
+- HTML đặc trưng bởi các thẻ / tag
+- Có nhiều version HTML: HTML5, tập trung HTML4
+- code HTML có đuôi file .html hoặc .htm
+- Chạy code HTML -> click thẳng file .html để chạy
+1/ Cấu trúc trang HTML cơ bản
+ -->
+ <!-- HTML là 1 cấu trúc phân cấp -->
+<!DOCTYPE html>
+<html>
+	<!-- head chứa các nội dung header của trang(user ko để ý) -->
+	<head>
+		<!-- Thẻ meta là thẻ khuyết, đặc trưng bởi thuộc tính, ko có thẻ đóng -->
+		<meta charset="utf8" />
+		<!-- thẻ title hiển thị tiêu đề trang -->
+		<title>Tiêu đề trang</title>
+		<!-- Thẻ meta dành cho SEO -->
+		<meta name="title" content="HTML cơ bản" />
+		<meta name="description" content="Khóa học HTML cơ bản của ITPlus" />
+		<meta name="keywords" content="html, cơ bản, ITPlus" />
+	</head>
+
+	<!-- body chứa nội dung hiển thị ra trang web -->
+	<body>
+		<!-- Hello world -->
+		<!-- 2 - Các thẻ HTML cơ bản -->
+		<!-- - Các thẻ h: heading - thẻ đầy đủ - thẻ tiêu đề: hay dùng cho tiêu đề bài viết -> SEO -->
+		<h1>Thẻ h1</h1>
+		<h2>Thẻ h2</h2>
+		<h3>Thẻ h3</h3>
+		<h4>Thẻ h4</h4>
+		<h5>Thẻ h5</h5>
+		<h6>Thẻ h3</h6>
+		<!-- Thẻ p - paragraph - tạo ra các đoạn văn, thẻ đầy đủ -->
+		<p>Thẻ p1 Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1Thẻ p1</p>
+		<p>Thẻ p2 Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2Thẻ p2</p>
+		<!-- Thẻ br - break-  xuống dòng - thẻ khuyết, vì file HTML ko hiểu ký tự Enter xuống dòng -->
+		Nội dung 1 <br />
+		Nội dung 2
+		<!-- Thẻ hr - horizontal - tạo ra 1 đường kẻ ngang - thẻ khuyết -->
+		<hr />
+		<!-- Thẻ i - italic - in nghiêng text, đầy đủ -->
+		<i>Thẻ i</i>
+		<!-- Thẻ b - bold - in đậm, đầy đủ -->
+		<b>Thẻ b</b>
+		<!-- Thẻ u - underline - gạch chân, đầy đủ -->
+		<u>Thẻ u</u>
+		<!-- Thẻ div - divide - chia ra các khối, đầy đủ, dùng để chứa các thẻ khác để tạo thành cấu trúc cho trang -> có tác dụng khi học về CSS -->
+		<div>Thẻ div</div>
+		nội dung a
+		<div>
+			<i>Thẻ i div</i>
+			<h1>Thẻ h1 div</h1>
+			<div>Thẻ div con</div>
+		</div>
+		<!-- Thẻ span - style css cho text ngang hàng, đầy đủ -->
+		<span>
+			Nội dung trong <span>thẻ</span> span
+		</span>
+		<!-- Thẻ meta - hướng dẫn trình duyệt các chức năng nào đó, thẻ khuyết, nằm trong thẻ <head> -->
+
+		<!-- Thẻ img - image - hiển thị ảnh - thẻ khuyết	
+		+ src - source: đường dẫn tới file ảnh muốn nhúng vào
+		Đường dẫn trong lập trình có 2 loại:
+		- Tương đối: vị trí của file muốn nhúng tính từ file hiện tại
+		- Tuyệt đối/vật lý: đường dẫn tính từ ổ gốc: C:\xampp\htdocs\PHP0921E2_SKDA\Day08_CD3_HTML\Slides\abc.png
+		Copy 1 ảnh bất kỳ vào cùng cấp với file demo.html hiện tại
+		-> ko nên dùng, vì máy khác có thể ko tồn tại đường dẫn
+			 -->
+		<img 
+		src="avatar.png" 
+		title="Rê chuột qua ảnh hiển thị"
+		alt="Hiển thị alt khi đường dẫn ảnh ko tồn tại"
+		width="100px" 
+		height="100px" 
+		 />
+
+		 <!-- Các thẻ cấu trúc bảng: table, tr, th, td - đầy đủ -->
+		 <table border="1" cellspacing="0" cellpadding="6">
+		 	<!-- table row -->
+		 	<tr>
+		 		<!-- table heading -->
+		 		<th>Tiêu đề 1</th>
+		 		<th>Tiêu đề 2</th>
+		 		<th>Tiêu đề 3</th>
+		 	</tr>
+		 	<tr>
+		 		<!-- Table data -->
+		 		<td>Nội dung 1</td>
+		 		<td>Nội dung 2</td>
+		 		<td>Nội dung 3</td>
+		 	</tr>
+		 	<tr>
+		 		<!-- Table data -->
+		 		<td>Nội dung 1</td>
+		 		<td>Nội dung 2</td>
+		 		<td>Nội dung 3</td>
+		 	</tr>
+		 </table>
+		 <!-- Gộp cột, gộp hàng trong bảng -->
+		 <table border="1" cellspacing="0" cellpadding="8">
+		 	<tr>
+		 		<th>Tiêu đề 1 hàng 1</th>
+		 		<th>Tiêu đề 2 hàng 1</th>
+		 		<th>Tiêu đề 3 hàng 1</th>
+		 		<th>Tiêu đề 4 hàng 1</th>
+		 	</tr>
+		 	<tr>
+		 		<!-- Gộp cột, áp dụng trên cột -->
+		 		<td colspan="2">Nội dung 1 hàng 2</td>
+		 		<!-- <td>Nội dung 2 hàng 2</td> -->
+		 		<td>Nội dung 3 hàng 2</td>
+		 		<!-- Gộp hàng, áp dụng trên cột -->
+		 		<td rowspan="2">Nội dung 4 hàng 2</td>
+		 	</tr>
+		 	<tr>
+		 		<td>Nội dung 1 hàng 3</td>
+		 		<td>Nội dung 2 hàng 3</td>
+		 		<td>Nội dung 3 hàng 3</td>
+		 		<!-- <td>Nội dung 4 hàng 3</td> -->
+		 	</tr>
+		 </table>
+		 <!-- Các thẻ danh sách: ul ol li -->
+		 <!-- order list -->
+		 <ol>
+		 	<li>Li thứ nhất</li>
+		 	<li>Li thứ 2</li>
+		 	<li>Li thứ 3</li>
+		 </ol>
+		 <!-- unorder list -->
+		 <ul>
+		 	<li>Li thứ nhất</li>
+		 	<li>Li thứ 2</li>
+		 	<li>Li thứ 3</li>
+		 </ul>
+		 <!-- Thẻ a - anchor - hiển thị link, đầy đủ -->
+		 <a href="https://google.vn">Click để tới trang Google</a>
+		 <a href="info.html" target="_blank">Click để tới file info.html</a>
+		 <!-- Thẻ button: hiển thị 1 nút, đầy đủ -->
+		 <button>Thẻ button</button>
+		 <!-- Thẻ center: căn giữa text, chỉ dùng cho làm bài tập, sau học sang css thì sẽ bỏ -->
+		 <center>Thẻ center</center>
+		 <!-- Thẻ iframe, fieldset-legend + 1 số thẻ HTML5: section, article, header, footer, nav, aside .... -> self study -->
+		 <!-- Thẻ cấu trúc form: <form>, <input />, <textarea>, <select>, <option> -->
+	 	 <!-- 1 form bao giờ cũng có thẻ form bao ngoài  -->
+	 	 <form method="GET" action="">
+	 	 	<!-- Input nhập text -->
+	 	 	Nhập họ tên:
+	 	 	<input type="text" />
+	 	 	<br />
+
+	 	 	Nhập địa chỉ:
+	 	 	<input type="text" placeholder="Đây là nơi nhập địa chỉ..." value="Hà Nội" />
+	 	 	<br />
+
+	 	 	<!-- Input nhập số -->
+	 	 	Nhập tuổi: 
+	 	 	<input type="number" />
+	 	 	<br />
+
+	 	 	<!-- Input nhập email -->
+	 	 	Nhập email:
+	 	 	<input type="email" />
+	 	 	<br />
+
+	 	 	<!-- Input nhập mật khẩu -->
+	 	 	Nhập mật khẩu:
+	 	 	<input type="password" />
+	 	 	<br />
+
+	 	 	<!-- Input dạng tích chọn 1 tùy chọn: cần set value tương tứng cho từng radio để xử lý form về sau, tất cả radio phải trùng name
+			checked: tích mặc định
+	 	 	-->
+	 	 	Chọn giới tính:
+	 	 	<input type="radio" value="0" name="gender" /> Nữ
+	 	 	<input type="radio" value="1" name="gender" checked /> Nam
+	 	 	<input type="radio" value="2" name="gender" /> Khác
+	 	 	<br />
+
+	 	 	<!-- Input tích nhiều tùy chọn đồng thời -->
+	 	 	Chọn job:
+	 	 	<input type="checkbox" value="0" checked /> Dev
+	 	 	<input type="checkbox" value="1" /> Tester
+	 	 	<input type="checkbox" value="2" /> BrSE
+	 	 	<br />
+
+	 	 	<!-- Input upload file: -->
+	 	 	Tải ảnh đại diện:
+	 	 	<input type="file" />
+	 	 	<br />
+
+	 	 	<!-- Chọn nhiều file -->
+	 	 	Tải nhiều file:
+	 	 	<input type="file" multiple />
+	 	 	<br />
+
+	 	 	<!-- Input dạng dropdown list - danh sách xổ xuống -->
+	 	 	Chọn quốc gia:
+	 	 	<select>
+	 	 		<option>VN</option>
+	 	 		<option>Lào</option>
+	 	 		<option>Campuchia</option>
+	 	 	</select>
+	 	 	<br />
+
+	 	 	<!-- Input dropdown list chọn nhiều -->
+	 	 	Chọn quốc gia yêu thích:
+	 	 	<select multiple>
+	 	 		<option>QG 1</option>
+	 	 		<option>QG 2</option>
+	 	 		<option>QG 3</option>
+	 	 		<option>QG 4</option>
+	 	 	</select>
+	 	 	<br />
+
+	 	 	<!-- Input nhập nhiều dòng dữ liệu, ko đc để khoảng cách nào giữa cặp thẻ textarea -->
+	 	 	Nhập mô tả:
+	 	 	<textarea placeholder="Nhập mô tả" rows="10" cols="10"></textarea>
+	 	 	<br />
+
+	 	 	<!-- Input submit form / gửi thông tin form lên server, phải có nút này thì form mới đc thông tin đi -->
+	 	 	<!-- Sau khi submit form trang sẽ tải lại -->
+	 	 	<!-- Trong form có 2 cách submit form:
+			- Trực quan nhất là click vào nút submit
+			- Đứng trong input + Enter
+	 	 	 -->
+	 	 	<input type="submit" value="Gửi thông tin" />
+	 	 	<!-- Input reset form: thiết lập các giá trị cho form như lúc ban đầu hiển thị ra form -->
+	 	 	<input type="reset" value="Reset form" />
+	 	 </form>
+
+
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Thẻ meta: thẻ khuyết, nằm trong thẻ <head>, mô tả dữ liệu siêu văn bản -->
+		<meta charset="utf8" />
+		<title>Tiêu đề trang, nvmanh</title>
+	</head>
+	<body>
+		Nội dung trong thẻ title head body, nvmanh
+		dsadsadsa
+		<!-- 
+		Học về HTML:
+		Trong HTML có 2 kiểu thẻ/tag:
+		+ Thẻ đầy đủ: có cả thẻ mở và thẻ đóng: <html></html>
+		<head></head> <title></title> <body></body>
+		+ Thẻ khuyết: Mở và đóng thẻ tại thẻ mở: <input />
+		<br />
+		- Thẻ <html>: thẻ tổ tiên của tất cả các thẻ khác
+		- Thẻ <head>: chứa header của trang, ko hiển thị ra
+			phần body trình duyệt
+		- Thẻ <title>: Chứa tiêu đề trang, hiển thị ở tab của
+		trình duyệt
+		- The <body>: là nơi hiển thị ra trình duyệt	
+			
+		 -->
+		 <!-- + Thẻ h - heading: tiêu đề
+		h1, h2, h3, h4, h5, h6 -> thẻ đầy đủ, hiển thị tiêu đề
+		tin tức, sản phẩm -> SEO
+		  -->
+		  <h1>Thẻ h1</h1>
+		  <h2>Thẻ h2</h2>
+		  <h3>Thẻ h3</h3>
+		  <h4>Thẻ h4</h4>
+		  <h5>Thẻ h5</h5>
+		  <h6>Thẻ h6</h6>
+		  <!-- + Thẻ hiển thị 1 văn bản - p : 
+			paragraph: thẻ đầy đủ
+		   -->
+		   <p>Thẻ p1</p>
+		   <p>Thẻ p2</p>
+		   <!-- Thẻ xuống dòng - br - break: thẻ khuyết, ngôn ngữ HTML sẽ ko hiểu kỹ tự enter khi xuống dòng, cần dùng thẻ br  -->
+		   Nội dung 1 <br />
+		   Nội dung 2
+		   <!-- Thẻ tạo 1 đường kẻ ngang: hr - horizontal, thẻ khuyết -->
+		   <hr />
+		   <!-- Thẻ tạo text in nghiêng: i - italic, đầy đủ -->
+		   <i>Text in nghiêng</i>
+		   <!-- Thẻ in đậm: b - bold, đầy đủ -->
+		   <b>Text in đậm</b>
+		   <!-- Thẻ gạch chân: u - underline, đầy đủ -->
+		   <u>Text bị gạch chân</u>
+		   <!-- Thẻ tạo cấu trúc trang, chứa các thẻ khác: div - division, đầy đủ, chỉ có tác dụng khi học CSS -->
+		   Text trong thẻ div
+		   <div>Text trong thẻ div</div>
+		   <div>
+		   		<h1>h1</h1>
+		   		<b>thẻ b</b>
+		   		<div>Thẻ div con</div>
+		   </div>
+		   <!-- Thẻ span: chỉ có tác dụng khi học CSS, dùng để CSS cho text ngang hàng, đầy đủ -->
+		   <span>
+		   	Thẻ <span style="color: red">span</span>
+		   </span>
+		   <!-- Thẻ meta: dùng trong thẻ <head> -->
+		   	<!-- Thẻ img: image, hiển thị ảnh, thẻ khuyết
+			, có 1 số thuộc tính:
+			+ src: đường dẫn tới file ảnh trên local, copy 1 ảnh bất kỳ vào cùng cấp file nvmanh.html, dùng giao diện window để copy ảnh
+			Codes_demo/
+			          /nvmanh.html
+			          /rose.jpeg
+			 .jpg, .png, .gif, .jpeg   
+			 Trong lập trình có 2 khái niệm về đường dẫn:
+			 + Đường dẫn tuyệt đối/trực tiếp/vật lý: đầy đủ từ tên ổ đến file của bạn: VD: C:/nvmanh/html/abc.jpg
+			 -> ko nên dùng vì máy khác ko tồn tại đường dẫn này
+			 + Đường dẫn tương đối/gián tiếp: đường dẫn so với đường dẫn hiện tại
+			 -> ưu tiên dùng
+			 VD: file muốn nhúng vào là rose.jpeg, file hiện tại là nvmanh.html, cần check xem từ file hiện tại nvmanh.html thì đi vào file rose.jpeg ntn 
+			 -> ko có ký tự / ở đầu tên file
+			 Tạo cấu trúc thư mục sau:
+			 /nvmanh.html
+			 /test 
+			      /rose.jpeg
+			 - width, height: set chiều rộng, cao cố định cho ảnh: đơn vị là pixel     
+			 - title: thuộc tính có sẵn với mọi thẻ, rê chuột qua thẻ thì hiển thị title lên
+			 - alt: alternative, hiển thị text thay thế khi đường dẫn ảnh ko tồn tại
+		   	 -->
+		   	<!-- <img src="rose.jpeg" /> -->
+		   	<img 
+		   	src="test/rose.jpeg" 
+		   	width="50px" 
+		   	height="50px"
+		   	title="Rê chuột qua để hiển thị text này" 
+		   	alt="Text này chỉ hiển thị khi đường dẫn ko tồn tại"
+		   	 />
+	</body>
+</html>
+<!-- Để chạy file trên trình duyệt bằng
+Sublime text, chuột phải vào file .html cần
+chạy -> Open in Browser -->
+<!-- dsadsadasads: Ctrl + / -->
+<!-- 
+
+ -->
