@@ -1,0 +1,143 @@
+<!-- demo_css.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8" />
+		<title>Demo CSS cơ bản</title>
+		<!-- Nhúng các file .css tại đây -->
+		<link rel="stylesheet" href="demo.css" />
+	</head>
+
+	<body>
+		<!-- 
+		1/ CSS là gì
+		- Cascading Style Sheet
+		- Là ngôn ngữ trang trí cho HTML
+		- HTML: dựng phần thô ngôi nhà -> CSS: sơn cho phần thô đó
+		- Web responsive: web hiển thị tương thích với mọi thiết bị: 
+		PC/Laptop - Ipad/Tablet - Mobile
+		- Học CSS: cơ bản + repsonsive
+		- Thư viện Bootstrap: hỗ trợ responsive
+		- CSS2, CSS3
+		- SASS: nâng cao hơn CSS -> giúp code CSS có cấu trúc hơn
+		2/ Cú pháp khai báo CSS
+		 -->
+		 <style type="text/css">
+		 	/* 
+			h1: là 1 selector - selector là phần tử HTML sẽ bị chịu tác động của CSS
+			color, background-color: thuộc tính CSS
+			red, yellow: giá trị của thuộc tính CSS;
+		 	*/
+		 	h1 {
+		 		color: red;
+		 		background-color: yellow;
+		 	}
+
+		 	/*- Các selector cơ bản trong CSS: */
+		 	/*+ Selector theo tên thẻ HTML */
+		 	p {
+		 		color: blue;
+		 	}
+		 	/*+ Selector theo id và class */
+		 	/*Selector theo id - mang tính duy nhất*/
+		 	#p-id {
+		 		background-color: red;
+		 	}
+		 	/*Selector theo class - sử dụng chung*/
+		 	.p-class {
+		 		background-color: green;
+		 	}
+		 	/*+ Selector theo cấp: sử dụng dấu cách làm ký tự phân cấp*/
+		 	/*ngoài ra còn 1 số ký tự phân cấp khác như + > ~*/
+		 	#div-parent p {
+		 		color: pink;
+		 	}
+		 	#div-parent div p {
+		 		color: red;
+		 	}
+		 	/*+ Selector theo thuộc tính thẻ */
+		 	input[type=text] {
+		 		background-color: red;
+		 	}
+		 	/*+ Selector theo trạng thái*/
+		 	/*Hover: rê chuột qua 1 selector*/
+		 	#h1-hover:hover {
+		 		color: green;
+		 	}
+		 	/*Vị trí của selector trong cấu trúc cha con*/
+		 	ul li:first-child {
+		 		background-color: red;
+		 	}
+		 	ul li:last-child {
+		 		background-color: yellow;
+		 	}
+		 	ul li:nth-child(2) {
+		 		background-color: green;
+		 	}
+		 	/*Vị trí trước/sau selector: bắt buộc phải có thuộc tính CSS content*/
+		 	#a-test:before {
+		 		content: "Trước thẻ a";
+		 	}
+		 	#a-test:after {
+		 		content: "Sau thẻ a";
+		 	}
+
+		 	/*- Cách khai báo vùng làm việc với CSS: có 3 cách*/
+		 	/*+ CSS inline ngay trong thẻ HTML -> thuộc tính style của thẻ*/
+		 	/*+ CSS inline ngay trong file .html -> thẻ style*/
+		 	/*+ Nhúng từ 1 file .css, tạo 1 file demo.css cùng cấp với
+		 	 file demo_css.html -> nhúng file .css vào file .html bằng thẻ link, 
+		 	 nhúng trong <head>*/
+		 	 /*Độ ưu tiên: Inline trong thẻ -> Inline trong file .html -> file .css*/
+		 </style>
+
+		 <h1 style="color: red; background-color: yellow">Thẻ h1 css inline</h1>
+
+		 <a href="#" id="a-test">Nội dung ban đầu thẻ a</a>
+
+		 <ul>
+		 	<li>Li thứ nhất</li>
+		 	<li>Li thứ 2</li>
+		 	<li>Li thứ 3</li>
+		 	<li>Li thứ 4</li>
+		 	<li>Li cuối cùng</li>
+		 </ul>
+
+		 <h1 id="h1-hover">Rê chuột qua để đổi màu text</h1>
+
+
+		 <form>
+		 	Nhập tên: <input type="text" /> <br />
+		 	Nhập tuổi: <input type="number" /> <br />
+		 	Nhập email: <input type="email" /> <br />
+		 	<input type="submit" value="Hiển thị" />
+		 </form>
+
+		 <div id="div-parent">
+		 	<p>Thẻ p con 1</p>
+		 	<p>Thẻ p con 2</p>
+		 	<p>Thẻ p con 3</p>
+		 	<div>
+		 		<p>Thẻ p cháu 1</p>
+		 	</div>
+		 </div>	
+
+
+		 <span id="p-id-2">Thẻ span</span>
+		 <p id="p-id">Thẻ p id</p>
+
+		 <p class="p-class">Thẻ p class</p>
+		 <u class="p-class">Thẻ u</u>
+		 <!-- Ưu tiên: class3 -> class2 -> class1 -->
+		 <a href="#" class="class1 class2 class3">Thẻ a</a>
+		 <!-- Ưu tiên id hơn class -->
+		 <a href="#" id="a1" class="a2">Thẻ a2</a>
+
+
+		 <p>Thẻ p1</p>
+		 <p>Thẻ p2</p>
+		 <p>Thẻ p3</p>
+
+		 <h1>Nội dung thẻ h1</h1>
+	</body>
+</html>
