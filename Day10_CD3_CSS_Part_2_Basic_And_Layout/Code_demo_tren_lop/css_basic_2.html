@@ -1,0 +1,143 @@
+<!-- css_basic_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS cơ bản phần 2</title>
+</head>
+<body>
+	<!-- 
+	- Margin: khoảng cách giữa 2 đối tượng HTML liền kề nhau
+
+	 -->
+	 <style type="text/css">
+	 	#margin1 {
+		    background: red;
+		   /* margin-top: 20px;
+		    margin-left: 30px;
+		    margin-right: 40px;
+		    margin-bottom: 20px;*/
+		    /*Viết gộp 4 giá trị:  top right bottom left*/
+		    margin: 20px 40px 20px 30px;
+		    /*Viết gộp 2 giá trị:  top-bottom left-right*/
+		    margin: 30px 20px;
+		    /*Viết gộp 1 giá trị: top-bottom-left-right*/
+		    margin: 40px;
+		}
+
+		#margin2 {
+		    background: yellow;
+		}
+		/*- padding:  khoảng cách tính từ viền của đối tượng html đến nội dung bên trong nó*/
+		#padding1 {
+		    border: 1px solid green;
+		    padding-top: 10px;
+		    padding-left: 20px;
+		    padding-bottom: 30px;
+		    padding-right: 50px;
+		    /* background: red; */
+		    /*padding viết gộp giống hệt margin*/
+		}
+		/*width, height:  set chiều rộng và chiều cao*/
+		div#w-h {
+		    background: blue;
+		    /* width: 100px; */
+		    /* height: 200px; */
+		    max-width: 100px;
+		}
+		/*position: set vị trí mà ko ảnh hưởng đến các đối
+		tượng HTML xung quanh*/
+		/*Đối tượng mà bị postion nổi lên trên mặt nước, nhìn thấy postion trước r mới tới HTML bình thường*/
+		/*- position: fixed:  vị trí cố định, ko thay đổi khi cuộn trang (quảng cáo)*/
+				body {
+			height: 1000px;
+		}
+		#fixed {
+		    background: yellow;
+		    width: 100px;
+		    height: 100px;
+		    position: fixed;
+		    top: 300px;
+		    left: 50px;
+		}
+		/*- position: relative, lấy chính đối tượng HTML đó để di chuyển */
+		div#relative {
+		    width: 70px;
+		    height: 70px;
+		    background: yellow;
+		    position: relative;
+		    top: 400px;
+		}
+		/*- position:  absolute, di chuyển dựa vào 1 đối tượng HTML cha của nó*/
+		/*Mặc định absolute lấy body để di chuyển theo*/
+		div#absolute {
+		    width: 80px;
+		    height: 80px;
+		    background: red;
+		    position: absolute;
+		    bottom: 0;
+		    right: 0;
+		}
+		/*Thông thường absolute luôn nằm trong 1 đối tượng có position=relative, và di chuyển bên trong đối tượng đó*/
+		div#parent {
+		    width: 400px;
+		    height: 200px;
+		    background: pink;
+		    position: relative;
+		}
+		div#ab {
+		    width: 100px;
+		    height: 100px;
+		    background: green;
+		    position: absolute;
+		    bottom: 0;
+		    right: 0;
+		}
+		/*overflow:  xử lý tràn nội dung*/
+		div#overflow {
+		    background: yellow;
+		    width: 100px;
+		    overflow: hidden;
+		}
+		/*opacity:  độ mờ*/
+		h1#opacity {
+		    opacity: 0.5;
+		}
+		/*transition:  hiệu ứng chuyển đổi trạng thái*/
+		#transition {
+		    transition: all 2s ease
+		}
+		#transition:hover {
+		    background: red
+		}
+	 </style>
+
+	 <h1 id="transition">Rê chuột qua để đổi màu nền</h1>
+
+	 <h1 id="opacity">CSS opacity</h1>
+
+	 <div id="overflow">
+	 	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	 </div>
+
+
+	 <div id="parent">
+	 	<div id="ab">Absolute con</div>
+	 </div>
+
+	 <div id="absolute">Postion absolute</div>
+
+	 <div id="relative">Position relative</div>
+
+	 <div id="fixed">Position fixed</div>
+
+
+	 <div id="w-h">Width height</div>
+
+	 <div id="padding1">Padding</div>
+
+	 <div id="margin1">Margin 1</div>
+	 <div id="margin2">Margin 2</div>
+</body>
+</html>

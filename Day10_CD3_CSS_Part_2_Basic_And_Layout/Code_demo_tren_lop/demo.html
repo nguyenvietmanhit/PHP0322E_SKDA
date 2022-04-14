@@ -1,0 +1,62 @@
+<!-- demo.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo dựng layout</title>
+	<style type="text/css">
+		.wrap {
+		    /* background: red; */
+		    width: 60%;
+		    margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+	- Các bước dựng layout:
+	+ Phân tích tổng quát trước để hình dung các hàng
+	+ Nếu hàng nào mà có từ 2 cột trở lên, thì áp dụng cấu trúc layout cho hàng đó, ngược lại thì ko cần
+	+ Code HTML từ trên xuống, code hàng nào thì code hết chi tiết cho hàng đó luôn
+	 -->
+	 <div class="wrap">
+	 	<!-- Logo -->
+	 	<div class="logo">
+	 		<h2 class="h-logo">Logo</h2>
+	 	</div>
+	 	<!-- END Logo -->
+
+	 	<!-- Menu -->
+	 	<div class="menu">
+	 		<ul>
+	 			<li><a href="#">Home</a></li>
+	 			<li><a href="#">Products</a></li>
+	 			<li><a href="#">Services</a></li>
+	 			<li><a href="#">About</a></li>
+	 			<li><a href="#">Contact</a></li>
+	 		</ul>
+	 	</div>
+	 	<!-- End Menu -->
+
+	 	<!-- Feature -->
+	 	<div class="feature">Feature</div>
+	 	<!-- End feature -->
+
+	 	<!-- Column: có cấu trúc layout 1 hàng 3 cột -->
+	 	<div class="column">
+	 		<div class="row">
+	 			<div class="col1 col">Column One</div>
+	 			<div class="col2 col">Column Two</div>
+	 			<div class="col3 col">Column Three</div>
+	 		</div>
+	 	</div>
+	 	<!-- End column -->
+	 	<!-- Copyright -->
+	 	<div class="copyright">
+	 		&copy; Copyright 2011
+	 	</div>
+	 	<!-- End copy right -->
+	 </div>
+</body>
+</html>
