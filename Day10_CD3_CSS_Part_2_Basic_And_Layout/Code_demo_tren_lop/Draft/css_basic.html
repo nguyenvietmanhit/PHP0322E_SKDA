@@ -1,0 +1,75 @@
+<!-- css_basic.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS cơ bản - tiếp tục từ buổi trước</title>
+</head>
+<body>
+	<style type="text/css">
+		/* 1/ Width - Height  */
+		#div-size {
+			/*max và min*/
+		    background: red;
+		    width: 100px;
+		    height: 200px;
+		}
+		/*2 / Position: vị trí của phần tử, di chuyển phần tử ko ảnh hưởng đến các phần tử xung quanh*/
+		/*fixed: cố định khi cuộn trang*/
+		#fixed {
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			position: fixed;
+		    top: 60px;
+		    left: 60px;
+		}
+
+		body {
+			height: 1000px;
+		}
+		/*relative: tương đối: di chuyển phần tử tính từ vị trí hiện tại của chính nó*/
+		#relative {
+			width: 100px;
+			height: 100px;
+			background: green;
+			position: relative;
+		    left: 10px;
+		    top: 30px;
+		}
+		/*absolute: tuyệt đối: di chuyển dựa theo vị trí của phần tử cha gần nhất có position=relative, ngược lại nếu ko có thì dựa theo body trình duyệt*/
+		#parent {
+			width: 300px;
+			height: 300px;
+			background: pink;
+			margin-left: 100px;
+			position: relative;
+		}
+		#absolute {
+			width: 50px;
+			height: 50px;
+			background: blue;
+			position: absolute;
+    		right: 0;
+		}
+
+	</style>
+
+	<div id="parent">
+		<div id="absolute">Position absolute</div>
+	</div>
+
+
+	<div id="relative">
+		Position relative
+	</div>
+
+	<div id="fixed">
+		Position fixed
+	</div>
+
+	<div id="div-size">
+		CSS width height
+	</div>
+
+</body>
+</html>

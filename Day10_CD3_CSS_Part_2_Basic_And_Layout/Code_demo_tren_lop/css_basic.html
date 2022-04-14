@@ -1,0 +1,180 @@
++<!--  Bài tập lớn cuối chuyên đề 3 này: thi vấn đáp + giao diện web
+	+ Cần chọn nhóm: 1 người hoặc tối đa 3 người, đăng ký với số lượng thành viên nhóm + tên đề tài với giảng viện thông qua bài post trên group lớp
+	+ Đề tài: 1 giao diện web theo chủ đề tự chọn: tin tức, bán hàng, thi trắc nghiệm, nghe nhạc -> code tay
+	Code dựa theo 1 tempalte có sẵn -->
+
+<!-- css_basic.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS cơ bản phần 1</title>
+	<style type="text/css">
+		h2 {
+			color: yellow;
+		}
+	</style>
+	<link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+	<!-- 
+	1/ Ngôn ngữ CSS:
+	- Cascading Style Sheet, dùng để định dạng các thẻ HTML
+	- CSS có nhiều phiên bản: CSS2, CSS3
+	2/ Cú pháp khai báo CSS:
+	selector {
+		property: value;
+	}
+
+	- selector: đối tượng HTML bị chịu tác động bởi CSS
+	- property: thuộc tính CSS
+	- value: giá trị tương ứng với property
+	3/ Cách nhúng code CSS: 3 cách
+	- C1: Nhúng inline CSS trong thẻ HTML sử dụng thuộc tính style
+	- C2: Nhúng inline CSS trong file HTML sử dụng thẻ style, nhúng trong thẻ head
+	- C3: Nhúng từ file .css từ bên ngoài sử dụng thẻ khuyết link, đặt trong thẻ head. Tạo file demo.css cùng cấp với file .html hiện tại
+	+ Thực tế luôn dùng C3
+	4/ Các selector cơ bản:
+	- Selector theo tên thẻ HTML:	
+	 -->
+	 <style type="text/css">
+	 	/*- Selector theo tên thẻ HTML:	*/
+	 	p {
+	 		color: blue;
+	 	}
+	 	/*- Selector theo thuộc tính id và class của thẻ HTML*/
+	 	/*Selector theo id theo cú pháp #<tên-id>*/
+	 	#p-id {
+	 		color: pink;
+	 	}
+	 	/*Selector theo class:  .<tên-class>*/
+	 	.p-class {
+	 		color: yellow;
+	 	}
+	 	/*- Selector theo cấp */
+	 	#div-id p {
+	 		color: purple;
+	 	}
+	 	/*- Selector theo thuộc tính đối tượng HTML: */
+	 	input[type=password] {
+	 		background-color: red;
+	 	}
+	 	/*- Selector theo trạng thái đối tượng HTML:  */
+	 	#h2-hover:hover {
+	 		color: red;
+	 	}
+	 	/*CSS theo vị trí chỉ hoạt động trong cấu trúc cha con*/
+	 	ul li:first-child {
+	 		background-color: red;
+	 	}
+	 	ul li:last-child {
+	 		background-color: yellow;
+	 	}
+	 	ul li:nth-child(2) {
+	 		background-color: green;
+	 	}
+	 	ul li:nth-child(3) {
+	 		background-color: pink;
+	 	}
+	 	/*Trạng thái trước và sau của đối tượng HTML*/
+	 	#a1:before {
+	 		content: "Text trước thẻ a";
+	 	}
+	 	#a1:after {
+	 		content: "Text sau thẻ a";
+	 	}
+
+	 	/*5 - Thuộc tính CSS cơ bản:  */
+	 	/* + Background */
+	 	/*#div-bg {*/
+	 		/*background-color: pink;*/
+	 		/*Code CSS trực quan hơn bằng công cụ Inspect HTML của trình duyệt*/
+	 	/*}*/
+
+	 	#div-bg {
+		    /*background-color: #6c6c2d;
+		    background-image: url(avatar.jpg);
+		    background-repeat: no-repeat;
+		    background-position: center;*/
+		     /*Viết gộp CSS Background*/
+		    background: #6c6c2d url(avatar.jpg) no-repeat center;
+		}
+		/*+ Font*/
+		.div-font {
+		    font-size: 25px;
+		    font-weight: bold;
+		    font-style: italic;
+		    /*Cách xác định font-family, nơi lưu trữ các font này nằm tại:  C:/Window/Fonts*/
+		    font-family: Gigi Regular;
+		}
+		/*+ Text:  */
+		.div-text {
+		    color: #760f0f;
+		    text-align: center;
+		    text-decoration: underline;
+		    text-transform: uppercase;
+		    text-shadow: 3px 3px 8px red;
+		    line-height: 30px;
+		}
+		/*+ Border:  */
+		.div-border {
+		    /*border-style: solid;
+		    border-width: 5px;
+		    border-color: red;*/
+		    /*Gộp: */
+		    border: solid 5px red;
+		    border-radius: 10px;
+		}
+
+	 </style>
+	 <div class="div-border">CSS Border</div>
+
+	 <div class="div-text">CSS Text</div>
+
+	 <div class="div-font">
+	 	CSS Font
+	 </div>
+
+	 <div id="div-bg">
+	 	CSS background
+	 </div>
+
+	 <a href="#" id="a1">Thẻ a ban đầu</a>
+
+	 <ul>
+	 	<li>Li thứ nhất</li>
+	 	<li>Li thứ hai</li>
+	 	<li>Li thứ ba</li>
+	 	<li>Li cuối cùng</li>
+	 </ul>
+
+	 <h2 id="h2-hover">Hover qua thẻ để đổi màu text</h2>
+
+	 <form>
+	 	<input type="text" />
+	 	<input type="number" />
+	 	<input type="password" />
+	 </form>
+
+	 <div id="div-id">
+	 	<p>Thẻ p1</p>
+	 	<p>Thẻ p2</p>
+	 </div>
+
+	 <p class="p-class">Selector theo class</p>
+	 <p class="p-class">Selector theo class</p>
+
+	 <p id="p-id">Selector theo thuộc tính id của thẻ</p>
+
+	 <p>Selector theo tên thẻ HTML</p>
+
+	 <h6>Nhúng từ file .css bên ngoài</h6>
+	 <h2>Nhúng inline CSS trong file HTML</h2>
+
+	 <h1 style="color: red">
+	 	Nhúng inline CSS trong thẻ HTML
+	 </h1>
+	
+</body>
+</html>

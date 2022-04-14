@@ -1,0 +1,114 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Layout</title>
+</head>
+<body>
+	<style type="text/css">
+		/*
+		 1 / Phần tử inline và block: 
+		- Các thẻ block ko đứng chung hàng đc
+		- Các thẻ inline đứng chung hàng đc
+		+ Dùng background để thấy đc phần tử là inline hay block
+		+ Một số thẻ block theo mặc định: div, h, ul , ul ...
+		+ Một số thẻ inline theo mặc định: a, span, b, u, i ...
+		- Dùng CSS để chuyển đổi linh hoạt kiểu hiển thị: display;
+		*/
+		#a1 {
+		    display: block;
+		    background: red;
+		}
+
+		li {
+			/*Nên dùng inline-block thay vì inline để linh hoạt hơn(margin đc trên dưới)*/
+		    display: inline-block;
+		    background: yellow;
+		    margin: 15px 10px;
+		}
+
+		/*2/ Dựng layout web */
+		/*
+		Layout là gì? Là bố cục trang, cấu trúc hàng và cột, tuy nhiên ko dùng cấu trúc table
+		để dựng layout vì ko linh hoạt khi responsive
+		Cơ chế dựng layout: css float, css display:flex, css grid;
+		+ Float: ;
+		Luôn luôn phải chú ý trường hợp vỡ giao diện khi sử dụng float
+		*/
+		.row-float {
+			border: 1px solid red;
+			overflow: auto;
+		}
+		.column-float1 {
+			background: yellow;
+			float: left;
+			width: 30%;
+		}
+		.column-float2 {
+			background: green;
+			float: left;
+			width: 40%;
+		}
+		.column-float3 {
+			background: blue;
+			float: left;
+			width: 30%;
+		}
+		/*+ Flexbox: là cơ chế dựng layout thông dụng vì đơn giản và linh hoạt so với float*/
+		.row-flex {
+			border: 1px solid yellow;
+			/*Flex luôn đc áp dụng ở hàng - thành phần cha trực tiếp*/
+			/*Cơ chế của flex: mặc định luôn giữ cột bên trong nằm trên 1 hàng*/
+			display: flex;
+		}
+		.column-flex1 {
+			background: red;
+			width: 30%;
+		}
+		.column-flex2 {
+			background: pink;
+			width: 40%;
+		}
+		.column-flex3 {
+			background: green;
+			width: 30%;
+		}
+
+	</style>
+
+	<div class="row-flex">
+		<div class="column-flex1">Hàng 1 cột 1</div>
+		<div class="column-flex2">Hàng 1 cột 2</div>
+		<div class="column-flex3">Hàng 1 cột 3</div>
+	</div>
+
+
+
+	<div class="row-float">
+		<div class="column-float1">Hàng 1 cột 1</div>
+		<div class="column-float2">Hàng 1 cột 2</div>
+		<div class="column-float3">Hàng 1 cột 3</div>
+	</div>
+
+	<ul id="menu">
+		<li>
+			<a href="#">Link 1</a>
+		</li>
+		<li>
+			<a href="#">Link 2</a>
+		</li>
+		<li>
+			<a href="#">Link 3</a>
+		</li>
+		<li>
+			<a href="#">Link 4</a>
+		</li>
+	</ul>
+
+	<a href="#" id="a1">Thẻ a1</a>
+	<a href="#" id="a2">Thẻ a2</a>
+
+	<div id="div1">div 1</div>
+	<div id="div2">div 2</div>
+</body>
+</html>

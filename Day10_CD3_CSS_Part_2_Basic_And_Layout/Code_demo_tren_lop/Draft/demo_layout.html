@@ -1,0 +1,161 @@
+<!-- demo_layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo bài tập dựng layout</title>
+</head>
+<body>
+	<h1>Chữa bài 3</h1>
+
+	<!-- 
+	Các bước dựng layout web
+	- Chia web thành các thành phần nhỏ hơn -> bố cục nhỏ hơn
+	-> chia đc thành các hàng là tốt nhất -> xác định các cột bên trong hàng đó
+	- Nếu 1 hàng chỉ có 1 cột, ko cần dựng cấu trúc layout
+	- Nếu 1 hàng có từ 2 cột trở lên -> dựng cấu trúc layout cho hàng đó
+	 -->
+	 <style type="text/css">
+	 	.row {
+		    display: flex;
+		    margin-bottom: 30px;
+		}
+
+		.col-bt-3 {
+		    width: 33.33%;
+		    margin: 0 30px;
+		}
+
+
+		.logo {
+		    background: #EFEFEF;
+		    text-align: center;
+		    font-weight: bold;
+		    padding: 6px 0;
+		    font-size: 22px;
+		}
+
+		.menu {
+		    background: #EFEFEF;
+		    text-align: center;
+		    padding: 10px 0;
+		    margin-top: 10px;
+		}
+
+		ul {
+		    list-style: none;
+		}
+
+		li {
+		    display: inline-block;
+		    margin: 0 10px;
+		}
+
+		.feature {
+		    text-align: center;
+		    background: #EFEFEF;
+		    margin-top: 20px;
+		    padding-bottom: 80px;
+		}
+
+		.columns {
+			margin-top: 10px;
+		}
+
+		.column {
+		    width: 33.33%;
+		    background: #EFEFEF;
+		    margin: 0 15px;
+		    padding-bottom: 50px;
+		    text-align: center;
+		}
+
+		.columns .row {
+			/*Cơ chế giữ cấu trúc khi margin trái phải của các column bên trong*/
+			margin: 0 -15px;
+		}
+
+		.copyright {
+		    text-align: center;
+		    background: #EFEFEF;
+		    margin-top: 10px;
+		    padding: 15px 0;
+		}
+
+		.container {
+		    width: 60%;
+		    /* background: red; */
+		    margin: auto;
+		}
+
+	 </style>
+	 <div class="container">
+	 	<!-- Dựng cấu trúc layout row/col-->
+	 	<div class="row">
+	 		<div class="col-bt-3">
+	 		abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi 
+	 		</div>
+	 		<div class="col-bt-3">
+	 		abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi 
+	 		</div>
+	 		<div class="col-bt-3">
+	 		abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi 
+	 		</div>
+	 	</div>
+
+	 	<div class="row">
+	 		<div class="col-bt-3">
+	 		abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi 
+	 		</div>
+	 		<div class="col-bt-3">
+	 		abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi 
+	 		</div>
+	 		<div class="col-bt-3">
+	 		abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi abc def ghi 
+	 		</div>
+	 	</div>
+	 </div>
+
+	 <h1>Chữa bài 5</h1>
+
+	 <div class="container">
+	 	<!-- Logo -->
+	 	<div class="logo">Logo</div>
+	 	<!-- End Logo -->
+
+	 	<!-- Menu -->
+	 	<div class="menu">
+	 		<ul>
+	 			<li><a href="#">Home</a></li>
+	 			<li><a href="#">Products</a></li>
+	 			<li><a href="#">Services</a></li>
+	 			<li><a href="#">About</a></li>
+	 			<li><a href="#">Contact</a></li>
+	 		</ul>
+	 	</div>
+	 	<!-- End menu -->
+
+	 	<!-- Feature -->
+	 	<div class="feature">Feature</div>
+	 	<!-- End feature -->
+
+	 	<!-- Columns -->
+	 	<div class="columns">
+	 		<!-- Do có 1 hàng và nhiều hơn 1 cột -> dựng layout row/col -->
+	 		<div class="row">
+	 			<div class="column">Column One</div>
+	 			<div class="column">Column Two</div>
+	 			<div class="column">Column Three</div>
+	 		</div>
+	 	</div>
+	 	<!-- End columns -->
+
+	 	<!-- Copyright -->
+	 	<div class="copyright">
+	 		&copy; Copyright 2021
+	 	</div>
+	 	<!-- End copyright -->
+
+	 </div>
+
+</body>
+</html>

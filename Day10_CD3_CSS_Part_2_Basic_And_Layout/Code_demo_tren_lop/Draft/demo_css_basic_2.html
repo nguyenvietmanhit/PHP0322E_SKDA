@@ -1,0 +1,204 @@
+<!-- demo_css_basic_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Demo CSS cơ bản phần 2</title>
+</head>
+<body>
+	<style type="text/css">
+		/* 1/ Border: viền của selector; */
+		#p-border {
+		    /*border-color: red;
+		    border-style: solid;
+		    border-width: 5px;*/
+		    border-radius: 5px;
+		    /*Viết gộp:*/
+		    border: 5px solid red;
+		}
+		/*2/ Margin: khoảng cách giữa 2 selector liền kề nhau*/
+		#div-1-margin {
+		    background: red;
+		    width: 100px;
+		    height: 100px;
+		    /*margin-left: 20px;
+		    margin-top: 40px;
+		    margin-right: 50px;
+		    margin-bottom: 20px;*/
+		    /*- Viết gộp chung 4 thuộc tính: top right bottom left*/
+		    margin: 40px 50px 20px 20px;
+		    /*- Việt gộp 4 thuộc tính: top-bottom left-right*/
+		    /*margin-top = margin-bottom = 30px*/
+		    /*margin-left = margin-right = 10px*/
+		    /*margin: 30px 10px;*/
+		    /*- Viết gộp 4 thuộc tính: top-left-right-bottom*/
+		    /*Cả 4 hướng = 50px*/
+		    /*margin: 50px;*/
+		}
+		#div-2-margin {
+			background: blue;
+			width: 200px;
+			height: 200px;
+		}
+
+		/*3/ Padding: khoảng cách từ border/viền của selector đến nội dung bên trong nó*/
+		#div-padding {
+		    background: green;
+		    /* width: 300px; */
+		    /* height: 300px; */
+		    padding-top: 40px;
+		    border: 3px solid red;
+		    padding-right: 80px;
+		    padding-bottom: 30px;
+		    padding-left: 40px;
+		    /*Cú pháp viết gộp giống hệt margin*/
+		}
+		/*4/ Width, height - set chiều dài và rộng của selector*/
+		#p-width-height {
+			background: pink;
+			width: 200px; */
+    		height: 50px;
+    		/*Ngoài ra còn min-max theo width và height*/
+		}
+		/*5 / Position: vị trí của phần tử so với các phần tử khác*/
+		/*nghỉ giải lao 15p -> 20h15*/
+		/*- Di chuyển selector mà ko ảnh hưởng đến các selector liền kề nó như margin*/
+		#div-1-position {
+			background: red;
+			width: 50px;
+			height: 50px;
+		}
+		#div-2-position {
+			background: yellow;
+			width: 100px;
+			height: 100px;
+		}
+		/*- position: fixed: hiển thị cố định trên trang, kể cả có scroll chuột: hiển thị quảng cáo, lấy body để căn sử dụng top, right, bottom, left*/
+		#div-fixed {
+		    background: purple;
+		    width: 50px;
+		    height: 50px;
+		    position: fixed;
+		    right: 0;
+		    top: 25px;
+		}
+		/*position: coi web là mặt nước bằng phẳng, khi 1 selector có css position -> lơ lửng trên mặt nước -> nhìn từ trên xuống -> position -> bên dưới -> layer của photoshop*/
+		/*position: relative: tương đối, căn từ chính bản thân selector*/
+		#div-relative {
+    		background: blue;
+		    width: 100px;
+		    height: 100px;
+		    position: relative;
+		    /*left: 35px;*/
+		    top: 45px;
+		    right: 0px;
+		}
+		/*Position: absolute: tuyệt đối, căn theo selector cha gần nhất có postion=relative, nếu ko thì sẽ căn theo trình duyệt*/
+		#parent {
+			width: 200px;
+			height: 200px;
+			background: green;
+			position: relative;
+			top: 300px;
+		}
+		#children {
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			bottom: 0;
+		}
+		/*z-index: thứ tự ưu tiên hiển thị của selector có css position*/
+		#z-div-1 {
+			background: blue;
+			width: 150px;
+			height: 150px;
+		}
+		#z-div-2 {
+			background: yellow;
+			width: 100px;
+			height: 100px;
+			/*Mặc định nếu ko set thì z-index = 0*/
+			z-index: 2;
+		}
+		#z-div-3 {
+			background: red;
+			width: 50px;
+			height: 50px;
+		}
+		.position-common {
+		    position: absolute;
+		}
+		/*Overflow: xác định cách thức hiển thị khi nội dung bị tràn khỏi viền*/
+		#div-overflow {
+			background: yellow;
+		    width: 50px;
+		    border: 1px solid red;
+		    overflow: hidden;
+		}
+
+		/*Opacity: độ mờ: max = 1, min = 0*/
+		#div-opacity {
+		    background: red;
+		    opacity: 0.5;
+		}
+		/*Transition: xác định thời gian và hiệu ứng chuyển đổi trạng thái của selector*/
+		#h1-transition:hover {
+			background: red;
+			color: yellow;
+			/*transition: all 3s ease;*/
+		}
+		#h1-transition {
+			transition: all 3s ease;
+			color: blue;
+		}
+	</style>
+
+	<h1 id="h1-transition">Thẻ h1 transition</h1>
+
+	<div id="div-opacity">
+		Div css opacity
+	</div>
+
+	<div id="div-overflow">
+		dsadsadsadsa dsadsadsadsa đasadsadasdas
+		dsadasdas dsa dsa dsa dá dá dá d asdsa d sa
+	</div>
+
+	<!-- <div id="z-div-1" class="position-common">Div 1</div>
+	<div id="z-div-2" class="position-common">Div 2</div>
+	<div id="z-div-3" class="position-common">Div 3</div> -->
+
+
+	<div id="parent">
+		<div id="children">Nội dung children</div>
+	</div>
+
+	<div id="div-relative">Div relative</div>
+
+
+	<div id="div-fixed">Div position fixed</div>
+
+
+	<div id="div-1-position">Div 1 position</div>
+	<div id="div-2-position">Div 2 position</div>
+
+
+	<p id="p-width-height">Thẻ p width height</p>
+
+	<span style="background: yellow">Span test</span>
+
+	<div id="div-padding">
+		Div css padding
+	</div>
+
+
+	<div id="div-1-margin">Div 1 css margin</div>
+	<div id="div-2-margin">Div 2 css margin</div>
+
+
+	<p id="p-border">
+		Thẻ p css border
+	</p>
+</body>
+</html>
