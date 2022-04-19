@@ -1,0 +1,42 @@
+<!-- note.html -->
+<!-- 
+Cách cắt giao diện từ file thiết kế cho trước
+- Đơn giản nhất là dùng HTML, CSS, Javascript tạo ra web càng giống file thiết
+kế càng tốt -> expect 100% -> rất khó -> 70% ok 
+- Cắt giao diện sẽ làm gì? Cần chuyển các thông tin từ file thiết kế thành
+tài nguyên để code: cắt ảnh, lấy đúng font chữ, các màu sắc, khoảng cách chỉ cần
+tương đối
+- Các bước thực hiện:
++ Tạo cấu trúc thư mục để quản lý source code cho dễ
+psd /
+    /css/
+        /style.css: file style chính
+    /images: chứa tất cả ảnh cắt từ file thiết kế
+    /fonts: chứa tất cả font lấy từ file thiết kế
+    /js/
+       /script.js: chứa code JS chính
+    /index.html: file chạy
++ Mở file thiết kế để chuyển thông tin từ file thiết kế vào cấu trúc trên
+- Zoom to nhỏ: 
+Ctrl +
+Ctrl -
+Alt + Con xoay chuột
+- Di chuyển sau khi zoom:
+Giữ phím cách + Di chuyển chuột
+- Zoom file về kích thước ban đầu:
+Ctrl + 0
+- Back nhiều lần:
+Ctrl Alt Z
+
+
+a/ Cắt ảnh từ file thiết kế, lưu vào thư mục images    
+- Thế nào là ảnh: là thứ mà ko thể dùng HTML CSS tạo ra đc
+Dùng HTML CSS linh hoạt hơn khi chỉnh sửa nội dung so với ảnh
+- Trước khi thao tác cần phải lấy vùng chọn trước
+b/ Lấy fonts từ file thiết kế
+Sử dụng công cụ Text của PSD
+NẾu font chưa tồn tại trên máy tính, thì PS báo lỗi -> search google để tải font này về. Thư mục lưu các font: C:/Windows/Fonts
+-> cần tải về font Pacifico -> lưu vào thư mục psd/fonts
+-> nhúng font vừa tải vào CSS
+c/ Code...
+ -->

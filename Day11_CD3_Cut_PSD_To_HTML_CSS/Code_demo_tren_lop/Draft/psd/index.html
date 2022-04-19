@@ -1,0 +1,98 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cắt HTML CSS từ file .PSD</title>
+	<!-- Nhúng file css, js -->
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<!-- Code:
+	- Phân tích web chia làm các layout(hàng/cột) nhỏ hơn
+	- NẾu gặp layout từ 2 cột trở lên, áp dung cấu trúc row-col để sử dụng flex
+	- Nghỉ 20h15 -> tiếp tục
+	 -->
+	<div class="container-fluid">
+		<!-- HEADER -->
+		<div class="header">
+			<div class="container">
+				<!-- Do có cấu trúc layout nên sẽ dựng luôn row-col -->
+				<div class="row">
+					<div class="logo">Bloom</div>
+					<div class="menu">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Portfolio</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END HEADER -->
+
+		<!-- MAIN -->
+		<div class="main">
+
+			<!-- MAIN TOP -->
+			<div class="main-top">
+				<div class="container">
+					<div class="row">
+						<div class="heading">
+							<h2 class="title">Lorem ipsum dolor sit amet</h2>
+							<p class="des">abc def ghi</p>
+							<p class="des">abc def ghi</p>
+							<a href="#" class="learn-more">Learn More</a>
+						</div>
+						<div class="img-main">
+							<img src="images/main.png" class="img" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN TOP -->
+
+			<div class="main-center">
+				<div class="container">
+					<h2 class="this-is">This is a heading</h2>
+					<div class="row">
+						<div class="col-item">
+							<div class="black"></div>
+							<h5 class="title-item">Aliquam et iaculis sapien</h5>
+							<p class="des-item">Abc def ghi</p>
+							<a href="#" class="learn-more">Learn More</a>
+						</div>
+						<div class="col-item">
+							<div class="black"></div>
+							<h5 class="title-item">Aliquam et iaculis sapien</h5>
+							<p class="des-item">Abc def ghi</p>
+							<a href="#" class="learn-more">Learn More</a>
+						</div>
+						<div class="col-item">
+							<div class="black"></div>
+							<h5 class="title-item">Aliquam et iaculis sapien</h5>
+							<p class="des-item">Abc def ghi</p>
+							<a href="#" class="learn-more">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-bottom">
+				<div class="container"></div>
+			</div>
+
+		</div>
+		<!-- END MAIN -->
+
+		<!-- FOOTER -->
+		<div class="footer">
+			<div class="container"></div>
+		</div>
+		<!-- END FOOTER -->
+	</div>	
+</body>
+</html>

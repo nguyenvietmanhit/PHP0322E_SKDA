@@ -1,0 +1,96 @@
+/*style.css*/
+/*Nhúng font*/
+@font-face {
+	/*Tên font tự đặt*/
+	font-family: 'Pacifico-Regular';
+	src: url('../fonts/Pacifico-Regular.ttf');
+}
+
+.header {
+    background: #2F2F2F;
+    color: white;
+    padding: 15px 0;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.logo, .menu {
+	width: 50%;
+}
+
+.logo {
+    font-size: 40px;
+    font-family: Pacifico-Regular;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 25px 15px;
+}
+
+body {
+	font-family: Myriad Pro;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-top {
+    background: #F1F1F1;
+    padding: 40px 0;
+}
+
+.heading {
+	width: 40%;
+}
+
+.img-main {
+	width: 60%;
+}
+
+.title {
+    margin-top: 0;
+}
+
+.learn-more {
+    background: #F99640;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.main-center {
+    padding: 40px 0;
+}
+
+.col-item {
+    width: 33.33%;
+    margin: 0 30px;
+}
+
+.black {
+    background: black;
+    height: 200px;
+}
+
+.main-center .row {
+	margin: 0 -30px;
+}
