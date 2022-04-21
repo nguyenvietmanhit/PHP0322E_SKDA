@@ -1,0 +1,110 @@
+<!-- bootstrap.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo thư viện Bootstrap của CSS</title>
+	<!-- Nhúng link CDN -->
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<!-- 
+	1/ Thư viện Bootstrap của CSS: là thư viện tích hợp cả HTML CSS Javascript để có thể sử dụng được luôn mà ko cần code thuần
+	- Học thư viện cần đọc tài liệu của thư viện, làm theo
+	mẫu của nó
+	- Với giao diện HTML CSS thì sẽ học Bootstrap như thế nào? học 2 thứ: layout + component
+	- Bootstrap hỗ trợ responsive, phổ biến trong framework của PHP
+	2/ Cài đặt:
+	- Download file .rar: tải về xong quan tâm 1 file:
+	css/bootstrap.min.css, copy vào source code 
+	Cấu trúc file:
+	bootstrap.html
+	css/ 
+	   /bootstrap.min.css: minimize
+
+	- Nhúng link CDN, link có lưu sẵn bootstrap trên server của link đó -> search: link cdn bootstrap
+	3/ Học layout Bootstrap
+	+ Chia 1 hàng thành 12 khối bằng nhau
+	+ Hỗ trợ tên class theo từng thiết bị:
+	Mobile: col-<số lượng khối>. VD: col-3
+	Ipad + PC: col-md-<số lượng khối>. VD: col-md-4	
+	 -->
+	 <h1>H1 Boostrap</h1>
+
+	 <h1>Demo layout</h1>
+	 <!-- 
+	Trên IPad/PC hiển thị 1 hàng 4 cột bằng nhau
+	Trên mobile hiển thị 2 hàng, mỗi hàng 2 cột bằng nhau
+	  -->
+	  <style type="text/css">
+	  	.content1 {background: red;}
+	  	.content2 {background: yellow;}
+	  	.content3 {background: blue;}
+	  	.content4 {background: purple;}
+	  </style>
+	 <div class="container">
+	 	<div class="row">
+	 		<div class="content1 col-md-3 col-6">Content 1</div>
+	 		<div class="content2 col-md-3 col-6">Content 2</div>
+	 		<div class="content3 col-md-3 col-6">Content 3</div>
+	 		<div class="content4 col-md-3 col-6">Content 4</div>
+	 	</div>
+	 </div>
+
+	 <!-- - Học về component có sẵn -> copy paste -->
+	 <div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+  A simple secondary alert—check it out!
+</div>
+<div class="alert alert-success" role="alert">
+  A simple success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="alert alert-info" role="alert">
+  A simple info alert—check it out!
+</div>
+<div class="alert alert-light" role="alert">
+  A simple light alert—check it out!
+</div>
+<div class="alert alert-dark" role="alert">
+  A simple dark alert—check it out!
+</div>
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

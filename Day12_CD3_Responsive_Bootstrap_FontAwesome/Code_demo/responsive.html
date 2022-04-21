@@ -1,0 +1,129 @@
+<!-- responsive.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- Bỏ zoom mặc định của trình duyệt -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo responsive</title>
+
+	<style type="text/css">
+		.header {
+		    background: #666;
+		    color: #fff;
+		    text-align: center;
+		    padding: 15px 0;
+		}
+
+		.row {
+		    display: flex;
+		}
+
+		.links {
+		    width: 30%;
+		    background: #ccc;
+		}
+
+		.content {
+			width: 70%;
+			padding-left: 20px;
+		}
+
+		ul {
+		    list-style: none;
+		    /*Bỏ margin mặc định của trình duyệt đối với
+		    ul */
+		    margin:  0; 
+		}
+
+		.main-content {
+		    /*padding-top: 20px;*/
+		}
+
+		/*css nhiều selector cùng 1 thời điểm*/
+		.links, .content {
+			height: 200px;
+			padding-top: 20px;
+		}
+
+		b {
+		    margin-bottom: 10px;
+		    display: inline-block;
+		}
+
+		.footer {
+		    background: #666;
+		    text-align: center;
+		    color: #fff;
+		    padding: 10px 0;
+		}
+		/*Cách giả lập trình duyệt về thiết bị khác nhau*/
+		/*Mặc định trình duyệt zoom nhỏ giao diện bản PC về Mobile/Ipad, cần phải thay đổi cơ chế zoom mặc định này*/
+
+		/*- CSS responsive theo thứ tự từ trên xuống như sau: */
+		/*Code CSS cho PC -> Ipad -> Mobile*/
+		/*- Quy định 3 mốc width cho 3 thiết bị trên như sau: */
+		/*PC: min-width:  1024px*/
+		/*Ipad: min-width:  768px, max-width:  1023px*/
+		/*Mobile: max-width: 767px*/
+		/*CSS cho thiết bị Ipad*/
+		@media(min-width:  768px) and (max-width:  1023px) {
+			.header {
+			    color: red;
+			    background: yellow;
+			}
+		}
+		/*CSS cho Mobile*/
+		@media(max-width: 767px) {
+			.header {
+			    color: blue;
+			    background: pink;
+			}
+			/*Thay đổi tính chất mặc định của flex để sắp xếp lại layout*/
+			.links, .content {
+				width: 100%;
+			}
+
+			.row {
+				flex-wrap: wrap;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+	- Responsive thể hiện sự tương thích  của web với mọi
+	thiết bị: mobile, ipad/table, pc, thông thường khi 
+	xử lý responsive chỉ cần xử lý cho pc và mobile
+	- Xu hướng mobile lên ngôi -> 1 website bắt buộc cần
+	responsive
+	- Các bước repsonsive:
+	+ Code HTML CSS hoàn chỉnh trên giao diện PC
+	+ Code responsive: mobile, ipad
+	 -->
+	 <div class="container">
+	 	<div class="header">
+	 		<h1 class="heading">Websites</h1>
+	 	</div>
+	 	<div class="main-content">
+	 		<div class="row">
+	 			<div class="links">
+	 				<ul>
+	 					<li><a href="#">Link 1</a></li>
+	 					<li><a href="#">Link 2</a></li>
+	 					<li><a href="#">Link 3</a></li>
+	 				</ul>
+	 			</div>
+	 			<div class="content">
+	 				<b>Taimienphi.vn</b>
+	 				<br />
+	 				<span class="text">
+	 					Helo manhnv abc def ghi
+	 				</span>
+	 			</div>
+	 		</div>
+	 	</div>
+	 	<div class="footer">Footer</div>
+	 </div>
+</body>
+</html>
