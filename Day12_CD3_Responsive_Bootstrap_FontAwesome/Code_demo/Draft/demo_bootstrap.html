@@ -1,0 +1,124 @@
+<!-- demo_bootstrap.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Thẻ meta responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+	<title>Demo thư viện Bootstrap của CSS</title>
+	<!-- Tích hợp Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Nhúng CSS sử dụng link CDN -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+</head>
+<body>
+	<h1>Thư viện Bootstrap của CSS</h1>
+	<style type="text/css">
+		/*
+		1 - Định nghĩa Bootstrap
+		+ Là 1 thư viện (có ng khác code sẵn r, chỉ việc dùng) tích hợp sẵn HTML, CSS, Javascript để sử dụng cho thiết kế web tiện và nhanh hơn
+		+ Hỗ trợ responsive
+		+ Nhiều Framework/CMS của PHP đều tích hợp sẵn Bootstrap
+		2 - Cài đặt Boottrap:
+		+ Nhúng trực tiếp link (CDN)
+		Search: Link CDN Bootstrap 4
+		+ Tải file về
+		Search: Download Bootstrap 4
+		+ Quan tâm file bootstrap.min.css, là File chính của thư viện Bootstrap về mặt giao diện
+		min: minimize: tối giản nhất -> file nén dung lượng nhỏ nhất -> ko sửa trực tiếp trong file này
+		-> khi sử dụng 1 thư viện, ko chỉnh sửa trực tiếp trong core của nó!
+
+		3 - Học Bootstrap:
+		+ Bootstrap layout: chia hàng/cột
+		- Bootstrap thiêt kế web theo hướng Mobile first: thiết kế cho Mobile trước -> Ipad -> PC (ko cần quan tâm), vẫn đi từ PC -> Ipad -> Mobile
+		- Layout/ hàng-cột của Boostrap: ;
+		+ Component: button, form, alert ....;
+		*/
+		.item1 {
+			background: red;
+		}
+		.item2 {
+			background: yellow;
+		}
+		.item3 {
+			background: green;
+		}
+	</style>
+		<!-- Ví dụ về layout bootstrap có 1 hàng 3 cột bằng nhau -->
+		<div class="container">
+			<!-- Class row bắt buộc khi dựng layout với bootstrap 
+			1 row = 12 khối width bằng nhau => 1 hàng 3 cột -> mỗi cột chiếm 4 khối bằng nhau
+			- Bootstrap coi iPad và PC là 1
+			- Thông thường hay dùng col-md cho Ipad/PC, col- cho Mobile
+			-->
+			<div class="row">
+				<div class="col-md-3 col-6 item1">Cột 1 hàng 1</div>
+				<div class="col-md-4 col-4 item2">Cột 2 hàng 1</div>
+				<div class="col-md-5 col-2 item3">Cột 3 hàng 1</div>
+			</div>
+		</div>
+
+		
+			<!-- 4 - Component Boostrap: Đọc tài liệu, copy code mẫu -> DONE -->
+	
+		<h1>Alert</h1>
+
+		<div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+  This is a secondary alert—check it out!
+</div>
+<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  This is a danger alert—check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+  This is a warning alert—check it out!
+</div>
+<div class="alert alert-info" role="alert">
+  This is a info alert—check it out!
+</div>
+<div class="alert alert-light" role="alert">
+  This is a light alert—check it out!
+</div>
+<div class="alert alert-dark" role="alert">
+  This is a dark alert—check it out!
+</div>
+
+<h1>Button</h1>
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-link">Link</button>
+
+
+<h1>Form</h1>
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

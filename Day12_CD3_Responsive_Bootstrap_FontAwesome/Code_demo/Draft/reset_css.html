@@ -1,0 +1,36 @@
+<!-- reset_css.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File reset CSS</title>
+	<!-- Nhúng file reset CSS -->
+	<link rel="stylesheet" href="css/normalize.css" />
+</head>
+<body>
+	<style type="text/css">
+		/*
+		- Thực tế thiết kế web, cần đảm bảo web hiển thị tương thích với mọi trình duyệt: Chrome, Firefox, IE, Safari, Edge ...!
+		- Không phải lúc nào hiển thị web trên Chrome thì IE hiển thị tương tự
+		-> Fix hiển thị trên IE là điều bình thường!
+		-> Có rule chung cho việc hiển thị trên mọi trình duyệt
+		-> thuật ngữ: reset CSS
+		*/
+		h1 {
+			background: red;
+		}
+
+		/*Rule reset CSS: bỏ hết margin và padding mặc định của mọi thẻ HTML -> ko nên áp dụng*/
+		/** {
+			margin: 0;
+			padding: 0;
+		  }*/
+		  /* Nên sử dụng rule reset CSS do cộng đồng viết trước: 
+			normalize.css
+			Search từ khóa:  normalize reset CSS;
+		  */
+
+	</style>
+
+	<h1>File reset css</h1>
+</body>
+</html>

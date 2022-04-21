@@ -1,0 +1,112 @@
+<!-- responsive.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo responsive web</title>
+	<!-- Thêm thẻ meta để web biết được chính xác kích thước thiết bị đang hiển thị -->
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+	<!-- 
+	- Web Responsive : web hiển thị tương thích trên mọi thiết bị
+	- 3 thiết bị chính: PC/Laptop, Ipad/Tablet, Mobile
+	- Web chuẩn responsive: xu hướng thiết kế web hiện nay
+	- Demo: đổi màu text: PC: màu đỏ, Ipad: màu xanh, Mobile: màu vàng
+	 -->
+	 <style type="text/css">
+	 	/*.h1-test {
+	 		color: red;
+	 	}*/
+	 	/* - Giả lập thiết bị bằng Inspect HTML của trình duyệt*/
+	 	/* - Quy định trước 1 số kích thước màn hình tương ứng với 3 thiết bị:
+		+ Mobile: max-width = 767px
+		+ Ipad: min-width: 768px, max-width: 1023px
+		+ PC: min-width: 1024px
+		- Sử dụng CSS @media để cho phép làm việc theo kích thước thiết bị
+		- Bắt buộc phải thêm 1 thẻ meta trên <head> như sau
+	 	*/
+	 	/*+ CSS cho PC*/
+	 	@media(min-width: 1024px) {
+	 		/*Code CSS tương ứng*/
+	 		.h1-test {
+	 			color: red;
+	 		}
+	 	}
+
+	 	/*+ CSS cho Ipad: */
+	 	@media(min-width: 768px) and (max-width: 1023px) {
+	 		.h1-test {
+	 			color: blue;
+	 		}
+	 	}
+
+	 	/*+ CSS cho Mobile*/
+	 	@media(max-width: 767px) {
+	 		.h1-test {
+	 			color: yellow;
+	 		}
+	 	}
+
+
+
+	 </style>
+	 <h1 class="h1-test">
+	 	Đổi màu text trên từng thiết bị
+	 </h1>
+
+	 <style type="text/css">
+	 	/* Chia layout sử dùng flex
+		+ PC: 1 hàng 4 cột bằng nhau
+		+ Ipad: 1 hàng 2 cột bằng nhau -> 2 hàng;
+		+ Mobile: 1 hàng 1 cột -> 4 hàng;
+	 	*/
+	 	.col1 {
+	 		background: green;
+	 	}	
+	 	.col2 {
+	 		background: red;
+	 	}
+	 	.col3 {
+	 		background: yellow;
+	 	}
+	 	.col4 {
+	 		background: pink;
+	 	}
+	 	/*Khai báo sẵn các @media cho các thiết bị -> nhớ phải thêm meta name=viewport*/
+	 	/*+ PC*/
+	 	@media(min-width: 1024px) {
+	 		.row {
+	 			display: flex;
+	 		}
+	 		.col {
+	 			width: 25%;
+	 		}
+	 	}
+
+	 	/*+ Ipad: */
+	 	@media(min-width: 768px) and (max-width: 1023px) {
+	 		.row {
+			    display: flex;
+			    /*Bỏ đi cơ chế flex mặc định, nếu tổng width trên 1 row > 100% -> bị xuống hàng mới*/
+			    flex-wrap: wrap;
+			}
+
+			.col {
+				width: 50%;
+			}
+	 	}
+	 	/*+ Mobile: */
+	 	@media(max-width: 767px) {
+	 		
+	 	}
+	 </style>
+
+	 <div class="row">
+	 	<div class="col1 col">Item 1</div>
+	 	<div class="col2 col">Item 2</div>
+	 	<div class="col3 col">Item 3</div>
+	 	<div class="col4 col">Item 4</div>
+	 </div>
+
+</body>
+</html>

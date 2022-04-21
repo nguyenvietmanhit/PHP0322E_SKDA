@@ -1,0 +1,106 @@
+<!-- bootstrap.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo thư viện Bootstrap của CSS</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<!-- Nhúng Bootstrap bằng link CDN -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+	<!-- Nhúng thủ công -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+	<!-- 
+	- Bootstrap: là 1 thư viện tích hợp cả HTML, CSS, Javascript với nhiều class có sẵn và component phong phú
+	- Giúp tạo giao diện nhanh hơn, hỗ trợ responsive
+	- Framework/CMS của PHP đều tích hợp sẵn Bootstrap
+	- Cách học thư viện: lên document để học, ko chỉnh sửa core của thư viện, mà chỉ base/dựa vào nó để phát triển
+	- Bootstrap theo hướng Mobile-first -> ưu tiên Mobile trc -> thiết kế từ Mobile -> Ipad -> PC
+	-> với dev thì cứ theo tư duy PC -> Mobile cho dễ code
+	1 / Cài đặt Bootstrap 4
+	+ Tải về
+	+ Dùng link online : CDN, link cdn bootstrap 4
+	 -->
+	 <h1>Thẻ h1 test</h1>
+
+	 <!-- 1 - Layout Bootstrap -->
+	 <!-- Dựng layout như sau:
+		Trên PC + Ipad: 1 hàng 4 cột bằng nhau
+		Trên Mobile: 1 hàng 2 cột -> 2 hàng
+	  -->
+	  <style>
+	  	.col1 {background: red;}
+	  	.col2 {background: blue;}
+	  	.col3 {background: yellow;}
+	  	.col4 {background: pink;}
+	  </style>
+	  <div class="container">
+	  	<div class="row">
+	  		<!-- 1 row chia làm 12 khối bằng nhau -->
+	  		<div class="col1 col-item col-md-3 col-6">Item 1</div>
+	  		<div class="col2 col-item col-md-3 col-6">Item 2</div>
+	  		<div class="col3 col-item col-md-3 col-6">Item 3</div>
+	  		<div class="col4 col-item col-md-3 col-6">Item 4</div>
+	  	</div>
+	  </div>
+
+	  <!-- Demo component có sẵn của Bootstrap -->
+	  <h1>Component Alert</h1>
+
+	  <div class="alert alert-primary" role="alert">
+	  This is a primary alert—check it out!
+	</div>
+	<div class="alert alert-secondary" role="alert">
+	  This is a secondary alert—check it out!
+	</div>
+	<div class="alert alert-success" role="alert">
+	  This is a success alert—check it out!
+	</div>
+	<div class="alert alert-danger" role="alert">
+	  This is a danger alert—check it out!
+	</div>
+	<div class="alert alert-warning" role="alert">
+	  This is a warning alert—check it out!
+	</div>
+	<div class="alert alert-info" role="alert">
+	  This is a info alert—check it out!
+	</div>
+	<div class="alert alert-light" role="alert">
+	  This is a light alert—check it out!
+	</div>
+	<div class="alert alert-dark" role="alert">
+	  This is a dark alert—check it out!
+	</div>
+
+	<h1>Component Button</h1>
+	<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+
+	<h1>Component Form</h1>
+
+	<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Để trang web nhận biết đc chính xác từng kích thước màn hình, bắt buộc phải thêm thẻ meta sau -->
+	<!-- bắt buộc phải có khi làm web resopnsive -->
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta charset="utf-8">
+	<title>Responsive web</title>
+</head>
+<body>
+	<!-- 
+	Web responsive là gì?
+	- Là web hiển thị tương thích/dễ đọc nội dung với mọi thiết bị:
+	PC, Ipad/Tablet, Mobile/SP
+	- VD: 
+	- Sử dụng Inspect HTML -> giả lập Ipad, Mobile
+	- Tại sao web lại cần responsive?
+	-> đáp ứng nhu cầu truy cập web từ mọi thiết bị/mọi đối tương
+	-> responsive là yếu tố bắt buộc khi thiết kế web hiện nay
+	-> có thứ hạng tốt với Google -> SEO Web
+	- Khi demo ko chú trọng về responsive -> mất thời gian , tập trung vào màn hình PC
+	 -->
+	 <style type="text/css">
+	 	/*Mặc định code CSS cho PC*/
+	 	.title {
+	 		color: red;
+	 	}
+	 	/*Quy định về kích thước của từng thiết bị như sau: 
+		PC/Latop: min-width: 1024px;
+		Ipad/Tablet: min-width: 768px, max-width: 1023px;
+		Mobile/SP: max-width: 767px;
+	 	*/
+	 	/*Nếu code cho Ipad, Mobile, cần viết code CSS đó sau code PC*/
+	 	/*- CSS cho Ipad*/
+	 	@media(min-width: 768px) and (max-width: 1023px) {
+	 		.title {
+	 			color: yellow;
+	 		}
+	 	}
+	 	/*- CSS cho Mobile*/
+	 	@media(max-width: 767px) {
+	 		.title {
+	 			color: green;
+	 		}
+	 	}
+	 </style>
+	 <h1 class="title">Màu text sẽ thay đổi theo từng thiết bị</h1>
+</body>
+</html>
