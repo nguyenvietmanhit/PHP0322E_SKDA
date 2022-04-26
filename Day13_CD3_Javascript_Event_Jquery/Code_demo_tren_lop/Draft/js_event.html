@@ -1,0 +1,87 @@
+<!-- js_event.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xử lý sự kiện với Javascript</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		// 1 - Javascript ngoài cung cấp các kiến thức nền tảng của 1 ngôn ngữ lập trình như
+		// biến hằng hàm ... thì nhiệm vụ quan trọng nhất của JS đối với Frontend của Web là giúp
+		//tương tác đc với các HTML
+		// - Xây nhà: 
+		// HTML -> dựng khung ngôi nhà
+		// CSS -> sơn nhà
+		// Javascript -> lắp chuông cửa, có khách bấm chuông/click thì ngôi nhà phản ứng lại
+		// làm sao để JS tương tác đc với HTML? -> sử dụng sự kiện/event
+		// 2 - Có 3 cách nhúng code JS vào HTML, giống CSS:
+		// + C1: viết trực tiếp trong thẻ HTML thông qua tên sự kiện
+		// + C2: viết trực tiếp trong file HTML sử dụng thẻ <script>
+		// + C3: viết tách thành 1 file .js, tạo 1 file demo.js cùng cấp với file .html hiện tại, sau đó nhúng lại file .js vào file .html
+		// -> website thực tế dùng cách 3, khi demo dùng cách 2
+
+
+	</script>
+
+	<script src="demo.js"></script>
+
+	<h1 onclick="alert('Clicked!')">Click để show cảnh báo</h1>
+
+
+	<h2 id="h2-click">Click h2 để show alert</h2>
+
+	<select id="country">
+		<option value="vn">Việt Nam</option>
+		<option value="ko">Korea</option>
+		<option value="us">Mỹ</option>
+	</select>
+
+	<form id="form">
+		Nhập tên: <input type="text" />
+		<input type="submit" value="Gửi thông tin" />
+	</form>
+
+<!-- <h3 id="h3-load">Click vào thẻ h3 để show alert</h3> -->
+	<script>
+		// 3 - Một số sự kiện hay dùng của Javascript
+		// + load: xảy ra khi trang đc tải hoàn tất (HTML CSS tải xong)
+		window.addEventListener('load', function() {
+			var obj_h3 = document.querySelector('#h3-load');
+			obj_h3.addEventListener('click', function() {
+				alert('h3 clicked!');
+			})
+		})
+
+		// + submit: xảy ra khi form đc submit, chỉ áp dụng với thẻ form	
+		var obj_form = document.querySelector('#form');
+		obj_form.addEventListener('submit', function() {
+			alert('form submitted!');
+		})
+
+		// + change: khi giá trị của selector bị thay đổi: chỉ áp dụng với thẻ select, radio, checkbox
+		var obj_country = document.querySelector('#country');
+		obj_country.addEventListener('change', function() {
+			// Lấy value của option đang chọn
+			console.log(this.value);
+			// Lấy text của option
+			console.log(this.options[this.selectedIndex].text)
+		});
+
+		// + click: xảy ra khi click vào selector (CSS)
+		// Chú ý: để gắn đc sự kiện thì luôn luôn phải xác định đc đối tượng muốn gắn
+		// Bước lấy đối tượng muốn gắn sự kiện, hàm querySelector trả về đối tượng đầu tiên mà nó tìm thấy
+		var obj_h2 = document.querySelector('#h2-click');
+		console.log(obj_h2);
+		// Sau khi lấy đc obj, thích làm gì nó thì làm:
+		// Bước gắn sự kiện cho obj trên
+		obj_h2.addEventListener('click', function() {
+			// Code bên trong hàm callback
+			// Hàm callback là 1 hàm đợi sự kiện trước nó xảy ra xong thì nó mới chạy
+			alert('Click thẻ h2 có id = h2-click');
+		});
+	</script>
+
+	<h3 id="h3-load">Click vào thẻ h3 để show alert</h3>
+</body>
+</html>

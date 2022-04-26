@@ -1,0 +1,73 @@
+<!-- demo_event.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo xử lý form với Javascript</title>
+</head>
+<body>
+	<form id="form">
+		Nhập tên: 
+		<input type="text" id="fullname" />
+		<br />
+		Nhập tuổi:
+		<input type="text" id="age" />
+		<br />
+		<input type="submit" value="Show thông tin" />
+	</form>
+
+	<!-- Khai báo dạng chờ để đổ dữ liệu từ JS vào -->
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+
+	<script>
+		// Gắn đc sự kiện submit cho form
+		// Lấy obj form
+		var obj_form = document.querySelector('#form');
+		obj_form.addEventListener('submit', function() {
+			// Quy trình xử lý form cơ bản:
+			// - Khai báo biến chứa lỗi và kết quả
+			var error = '';
+			var result = '';
+			// - Lấy giá trị input form
+			// Xử lý input nhập tên:
+			var obj_fullname = document.querySelector('#fullname');
+			var fullname = obj_fullname.value;
+			// Xử lý input tuổi:
+			var obj_age = document.querySelector('#age');
+			var age = obj_age.value;
+			// alert(fullname + age); 
+			// - Validate form: lọc dữ liệu trc khi gửi lên server, nếu có lỗi đổ vào biến error
+			// + Các input ko đc để trống
+			// + Tên ít nhất 3 ký tự
+			// + Tuổi phải là số
+			if (fullname == '' || age == '') {
+				error = 'Không đc để trống';
+			} else if (fullname.length < 3) {
+				error = 'Tên ít nhất 3 ký tự';
+				// Focus luôn chuột vào input đang lỗi
+				obj_fullname.focus();
+			} else if (isNaN(age) == true) {
+				error = 'Tuổi phải là số';
+				obj_age.focus();
+			}
+			// - Xử lý logic chính của bài toán chỉ khi ko có lỗi nào xảy ra
+			if (error == '') {
+				result += "Tên của bạn: " + fullname + "<br />";
+				result += "Tuổi của bạn: " + age;
+			}
+
+			// - Hiển thị error và result ra màn hình
+			// Error:
+			var obj_error = document.querySelector('#error');
+			obj_error.innerHTML = error; //innerText
+			// Result:
+			var obj_result = document.querySelector('#result');
+			obj_result.innerHTML = result;
+
+			// Hành vi mặc định của form khi submit là sẽ bị tải lại, cần ngăn ngừa hành vi tải lại form để giữ lại kết quả trên bằng cách sau:
+			// event là đối tượng có sẵn đc sinh ra trong hàm callback
+			event.preventDefault();
+		})
+	</script>
+</body>
+</html>

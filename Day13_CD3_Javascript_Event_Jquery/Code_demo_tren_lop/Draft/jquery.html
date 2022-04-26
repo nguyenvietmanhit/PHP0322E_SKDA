@@ -1,0 +1,85 @@
+<!-- jquery.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo jQuery</title>
+</head>
+<body>
+	<!-- nhúng link CDN -->
+	<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+	<!-- Nhúng file jquery-3.5.1.min.js -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+
+	<script>
+		// 1/ jQuery: javascript query, là thư viện viết bằng Javascript, cung cấp các hàm để thao tác với Javascript ngắn gọn và đơn giản hơn Javascript thuần
+		// jQuery - Bootrstrap: Javascript - CSS
+		// 2/ Cài đặt jQuery:
+		// + Tải về: jquery-[version].min.js
+		// + Link CDN
+
+		// Viết thử code dùng cú pháp jQuery
+		$(document).ready(function() {
+			console.log('Hello, World');
+		})
+		// 3 - jQuery có 6 module chính: Selector, Attribute, DOM, Event, Effect, Ajax
+		// 4 - Demo xử lý form bằng jQuery
+	</script>
+
+	<script>
+		// Tương đương sự kiện load của window, đảm bảo code JS chạy sau cùng
+		$(document).ready(function() {
+			// Lấy obj form sử dụng module Selector
+			// var obj_form = $('#form');
+			// // Gắn sự kiện sử dụng module Event
+			// obj_form.submit(function() {
+
+			// })
+			// Obj lấy bằng jQuery hoàn toàn khác obj lấy bằng JS thuần
+			// $('#form').addEventListener(); báo lỗi
+			$('#form').submit(function() {
+				// - Tạo biến
+				var error = '';
+				var result = '';
+				// - Lấy giá trị form
+				var fullname = $('#fullname').val();
+				var age = $('#age').val();
+				// - Validate form:
+				if (fullname == '' || age == '') {
+					error = 'Phải nhập';
+				} else if (fullname.length < 3) {
+					error = 'Tên ít nhất 3 ký tự';
+					$('#fullname').focus();
+				} else if (isNaN(age)) {
+					error = 'Tuổi phải là số';
+					$('#age').focus();
+				}
+				// - Xử lý logic form chỉ khi ko có lỗi nào xảy ra
+				if (error == '') {
+					result += "Tên: " + fullname + "<br />";
+					result += "Tuổi: " + age;
+				}
+				// - Đổ dữ liệu ra màn hình
+				$('#error').html(error);
+				$('#result').html(result);
+				// - Ngăn ngừa tải lại trang khi submit form
+				event.preventDefault();
+			})
+		})
+	</script>
+
+	<form id="form">
+		Nhập tên: 
+		<input type="text" id="fullname" />
+		<br />
+		Nhập tuổi:
+		<input type="text" id="age" />
+		<br />
+		<input type="submit" value="Show thông tin" />
+	</form>
+	<!-- Khai báo dạng chờ để đổ dữ liệu từ JS vào -->
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+
+
+</body>
+</html>
