@@ -1,0 +1,105 @@
+<!-- form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xử lý form với Javascript</title>
+</head>
+<body>
+	<form id="form-submit">
+		<h1>Contact Manager</h1>
+		First Name: <input type="text" id="first-name" />
+		<br />
+		Last Name: <input type="text" id="last-name" />
+		<br />
+		Email: <input type="text" id="email" />
+		<br />
+		Telephone: <input type="text" id="telephone" />
+		<br />
+		<input type="submit" value="Add Contact" />
+	</form>
+
+	<!-- Tạo 2 thẻ rỗng ở trạng thái chờ đổ nội dung từ JS -->
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+
+	<script type="text/javascript">
+		// Lấy obj form để gắn sự kiện submit
+		var obj_form = document.querySelector('#form-submit');
+		obj_form.addEventListener('submit', function() {
+			// alert('abc');
+			// QUY TRÌNH XỬ LÝ FORM CƠ BẢN:
+			// - Tạo các biến lưu thông tin lỗi và kết quả hiển thị ra màn hình
+			var error = '';
+			var result = '';
+			// - Lấy các giá trị của form:
+			// First name:
+			var obj_firstname = document.querySelector('#first-name');
+			var first_name = obj_firstname.value;
+			// Last name:
+			var obj_lastname = document.querySelector('#last-name');
+			var last_name = obj_lastname.value;
+			// Email:
+			var obj_email = document.querySelector('#email');
+			var email = obj_email.value;
+			// Telephone:
+			var obj_telephone = document.querySelector('#telephone');
+			var telephone = obj_telephone.value;
+			// - Validate form: lọc dữ liệu đầu vào
+			// + Tất cả các trường phải nhập: so sánh với chuỗi rỗng
+			// + Email phải đúng định dạng: search chuỗi regex
+			// + Telephone chỉ đc nhập số: isNaN: is not a number
+			// -> true nếu ko phải số, và ngược lại
+			// Nguyên tắc validate: nếu có lỗi thì đổ thông tin lỗi vào biến error
+			// Xử lý validate email sử dụng biểu thức regex / biểu thức chính quy: search regex validate email javascript
+			if (first_name == '') {
+				error = 'First name phải nhập';
+				// Focus con trỏ chuộ vào input này
+				obj_firstname.focus();
+			} else if (last_name == '') {
+				error = 'Last name phải nhập';
+				obj_lastname.focus();
+			} else if (email == '') {
+				error = 'Email phải nhập';
+				obj_email.focus();
+			} else if (telephone == '') {
+				error = 'Telephone phải nhập';
+				obj_telephone.focus();
+			} else if (validateEmail(email) == false) {
+				error = 'Email chưa đúng định dạng';
+				obj_email.focus();
+			} else if (isNaN(telephone) == true) {
+				error = 'Telephone phải là số';
+				obj_telephone.focus();
+			}
+			// - Xử lý logic chính của bài toán chỉ khi ko có lỗi nào xảy ra
+			if (error == '') {
+				result = "First Name: " + first_name + "<br />";
+				result += "Last Name: " + last_name + "<br />";
+				result += "Email: " + email + "<br />";
+				result += "Telephone: " + telephone;
+			}
+			// - Hiển thị error và result ra form: tạo 2 thẻ với nội dung trống, đổ 2 biến này vào 2 thẻ đó
+			// Đổ nội dung vào thẻ chứa error:
+			var obj_error = document.querySelector('#error');
+			// Set nội dung cho đối tượng:
+			obj_error.innerHTML = error;
+			var obj_result = document.querySelector('#result');
+			obj_result.innerHTML = result;
+
+			// + MẶc định khi submit form thì trang sẽ bị tải lại,
+			// nếu muốn giữ lại đc cái error và result sau khi submit form, thì cần ngăn hành vi tải lại form khi submit
+			// Đối tượng event có sẵn bởi Javascript, chỉ bên trong hàm callback
+			event.preventDefault();
+		});
+
+
+
+		function validateEmail(email) {
+	        var re = /\S+@\S+\.\S+/;
+	        return re.test(email);
+	    }
+	</script>
+</body>
+</html>

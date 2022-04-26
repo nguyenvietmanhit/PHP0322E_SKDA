@@ -1,0 +1,116 @@
+<!-- demo.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xử lý sự kiện trong JS</title>
+</head>
+<body>
+	<h1 id="h1-click" >Click để đổi màu text</h1>
+	<select id="country">
+		<option value="VN">VN</option>
+		<option value="KR">KR</option>
+		<option value="JP">JP</option>
+	</select>
+
+	<h1 id="h1-enter-leave">
+		Hover để đổi màu nền và ngược lại
+	</h1>
+
+	<script type="text/javascript">
+		
+		// Để code JS chạy đc ko quan trọng vị trí HTML, có thể đặt code JS trong sự kiện onload của Window
+		window.onload = function() {
+			// B1: Lấy obj
+			var obj_h2 = document.querySelector('#h2-click');
+			// B2: Gắn sự kiện click
+			obj_h2.addEventListener('click', function() {
+				alert('click h2');
+			})
+		}
+	</script>
+
+	<h2 id="h2-click">Click để show alert</h2>
+
+	<input type="text" id="fullname" />
+
+	<form id="form-submit">
+		Nhập địa chỉ:
+		<input type="text" id="address" />
+		<br />
+		<input type="submit" value="Hiển thị địa chỉ" />
+	</form>
+
+	<script type="text/javascript">
+		// + sự kiện onsubmit: xảy ra khi submit form, chỉ áp dụng cho thẻ form
+		//B1: lấy obj
+		var obj_form = document.querySelector('#form-submit');
+		//B2: Gắn sự kiện:
+		obj_form.addEventListener('submit', function() {
+			var address = document.querySelector('#address').value;
+			alert(address);
+		})
+
+		// + sự kiện onkeyup: xảy ra khi ấn 1 phím sau đó nhả ra
+		//B1: Lấy obj:
+		var obj_input = document.querySelector('#fullname');
+		//B2: Gắn sự kiện
+		obj_input.addEventListener('keyup', function() {
+			var val = this.value;
+			console.log(val);
+		});
+		// + sự kiện onkeydown:  
+		// + sự kiện onfocus:
+		// + sự kiện onblur:
+
+		// + sự kiện onload:
+
+		// + sự kiện onmouseenter và onmouseleave: đi vào đối tượng HTML và đi ra khỏi đối tượng đó
+		// B1: Lấy đối tượng muốn tương tác:
+		var obj_h1 = document.querySelector('#h1-enter-leave');
+		// B2: Gắn sự kiện
+		obj_h1.addEventListener('mouseenter', function() {
+			this.style.background = 'red';
+		});
+		obj_h1.addEventListener('mouseleave', function() {
+			this.style.background = 'white';
+		})
+
+		// + sự kiện onchange: xảy ra khi value của input thay đổi,  áp dụng cho select, radio, checkbox
+		// B1: Lấy obj muốn tương tác:
+		var obj_country = document.querySelector('#country');
+		// B2: Gắn sự kiện:
+		obj_country.addEventListener('change', function() {
+			// Lấy giá trị đang select của obj hiện tại:
+			var country = this.value;
+			alert(country);
+		});
+
+		// + sự kiện onclick: xảy ra khi click selector
+		// B1: Lấy đối tượng muốn tương tác dựa theo cú pháp
+		//pháp lấy selector của CSS
+		var obj_h1 = document.querySelector('#h1-click');
+		// B2: Gắn sự kiện cho đối tượng trên:
+		// Giá trị thứ hai truyền vào là hàm callback, là hàm chờ khi sự kiện trước đó xảy ra xong thì mới chạy hàm callback
+		obj_h1.addEventListener('click', function() {
+			// Code bên trong hàm callback
+			// this tham chiếu đến đối tượng hiện tại
+			this.style.color = 'red';
+		});
+
+
+		// alert('test JS');
+		// 1 - Event / Sự kiện trong Javascript
+		// + 3 ngôn ngữ cho giao diện web: HTML, CSS, JS
+		// + JS tương tác với HTML thông qua các sự kiện
+		// 2 - Một số sự kiện JS cơ bản:
+		// Nguyên tắc: để JS có thể tương tác với HTML, bắt
+		//buộc code JS phải chạy sau khi HTML sinh ra
+	</script>
+
+	<h1 onclick="alert('hello')">
+		Click để show cảnh báo
+	</h1>
+</body>
+</html>
