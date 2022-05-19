@@ -8,6 +8,14 @@ demo_login /
 -->
 <?php
 session_start();
+// - Check nếu tồn tại cookie username thì đã Ghi nhớ đăng nhập
+//thành công, thì cần chuyển hướng sang trang admin
+if (isset($_COOKIE['username'])) {
+    $_SESSION['success'] = 'Ghi nhớ đăng nhập thành công';
+    $_SESSION['username'] = $_COOKIE['username'];
+    header('Location: admin.php');
+    exit();
+}
 // - Check nếu đã đăng nhập rồi thì chuyển hướng sang trang admin
 if (isset($_SESSION['username'])) {
     $_SESSION['success'] = 'Bạn đã đăng nhập rồi, ko thể truy
@@ -42,6 +50,11 @@ if (isset($_POST['login'])) {
         // + Xử lý đăng nhập: giả sử đăng nhập thành công nếu
         //như password = 123
         if ($password == 123) {
+            // + Nếu có tích vào Ghi nhớ đăng nhập và đăng nhập
+            //thành công lưu lại cookie
+            if (isset($_POST['remember'])) {
+                setcookie('username', $username, time() + 3600);
+            }
             // + Tạo ra session lưu lại thông tin của user vừa
             //đăng nhập thành công
             $_SESSION['username'] = $username;
