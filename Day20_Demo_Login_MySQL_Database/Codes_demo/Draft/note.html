@@ -1,0 +1,64 @@
+<?php
+// note.php
+/**
+ * Làm việc với CSDL MySQL
+ * 1/ Tổng quan
+ * - CSDL là 1 nơi lưu trữ dữ liệu. VD: nhà kho là 1 CSDL, bạn muốn lấy 1 thiết bị từ nhà kho ra phải
+ * nhờ đến thủ kho -> thủ kho -> câu truy vấn SQL - Structure Query Language
+ * Muốn tương tác đc với CSDL bắt buộc phải dùng câu truy vấn
+ * - CSDL là 1 thành phần bắt buộc phải có để làm website động (thêm CSDL + PHP) ,
+ * là website chứa các nội dung có thể
+ * thay đổi nhờ 1 hệ thống quản trị backend phía sau
+ * Website tĩnh (HTML + CSS + JS) là website nội dung cố định, muốn thay đổi nội dung phải sửa code
+ * - Có nhiều hệ quản trị CSDL khác nhau: MySQL, SQL Server, Mongodb, SQLite ...
+ * - Thông dụng nhất với PHP luôn luôn là MySQL -> đều free
+ * - Với coder học CSDL ntn ? Học viết các truy vấn SQL để tương tác với CSDL
+ * - Cài XAMPP -> cài sẵn MySQL, cài luôn PHPMyadmin: là công cụ quản trị CSDL MySQL bằng giao diện
+ * http://localhost/phpmyadmin
+ * Username: root
+ * Password:
+ *
+ * 2 / Thuật ngữ CSDL:
+ * - Database: cơ sở dữ liệu / CSDL
+ * - 1 Database có nhiều Table: bảng, chứa các dữ liệu cùng tính chất, cùng 1 đối tượng
+ * VD: bảng products chứa các sản phẩm
+ * bảng categories chứa các danh mục
+ * bảng users chứa các user
+ * -> tên bảng nên viết dạng số nhiều và viết thường
+ * - 1 Table chứa nhiều Record / Row - bản ghi: là 1 dữ liệu cụ thể của bảng
+ * VD: bảng products có 1 record/bản ghi: Tên sp = máy tính asus, giá = 1000, mô tả = đây là máy
+ * tính asus, ngày tạo = 06-12-2021 ....
+ * - 1 Table có nhiều Column / Field: trường, 1 trường là 1 mô tả thông tin cho bản ghi
+ * VD: bảng products có các trường: name, price, description, created_at ...
+ * - Primary key: khóa chính của bảng: là 1 trường phân biệt các bản ghi với nhau, các bản ghi ko đc
+ * trùng khóa chính, thường sẽ chọn trường id làm khóa chính vì có cơ chế tự động tăng lên 1
+ * mỗi khi có bản ghi mới sinh ra
+ * - Foreign key: khóa ngoại, là 1 trường dùng liên kết các bảng lại với nhau, là 1 trường
+ * bình thường trong bảng A nhưng lại là khóa chính của bảng B
+ * - Một số mối quan hệ trong CSDL
+ * 1 - 1: 1 danh mục chỉ có 1 sp, ngược lại 1 sp chỉ nằm trong 1 danh mục
+ * 1 - n: 1 danh mục có nhiều sp, ngược lại 1 sp chỉ nằm trong 1 danh mục
+ * n - n: 1 danh mục có nhiều sp, ngược lại  sp nằm trong nhiều danh mục -> phức tạp nhất
+ * - Các câu truy vấn SQL cơ bản: dùng PHPMyadmin làm nơi để viết truy vấn
+ *
+ */
+# 1 - Tạo CSDL: mặc dù MySQL ko phân biệt hoa thường, nên viết từ khóa của MySQL là in hoa
+CREATE DATABASE IF NOT EXISTS php0721e_demo
+CHARACTER SET utf8 # để CSDL có thể lưu đc ký tự có dấu mà ko bị lỗi font
+COLLATE utf8_general_ci; # để CSDL có thể lưu đc ký tự có dấu mà ko bị lỗi font
+# 2 - Sử dụng CSDL: để cho phép thao tác với CSDL cụ thể nào, chỉ có tác dụng khi thao tác bằng command line,
+# còn với PHPMyadmin thì sẽ ko có tác dụng
+# Muốn thao tác với bảng, bản ghi, trường ... bắt buộc phải đứng tại CSDL đó
+USE php0721e_demo;
+# 3 - Xóa CSDL:
+DROP DATABASE abc;
+# 4 - Các kiểu dữ liệu trong MySQL
+# + Kiểu number: lưu các giá trị là số, dùng 2 kiểu chính sau:
+# TINYINT: 1 byte, giá trị từ -128 -> 127
+# INT: 4 byte, giá trị xấp xỉ ~2 tỉ -> 2 tỉ
+# + Kiểu string: lưu các giá trị là chuỗi
+# VARCHAR: chuỗi 1 - 255 ký tự
+# TEXT: > 255 ký tự
+# + Kiểu Date và Time: kiểu thời gian, lưu chuỗi thời gian theo 1 format cố định:
+# DATETIME: lưu ngày giờ theo kiểu thủ công, format khi lưu vào CSDL bắt buộc phải là Y-m-d H:i:s
+# TIMESTAMP: lưu ngày giờ theo kiểu tự động lấy đc múi giờ,format khi lưu vào CSDL bắt buộc Y-m-d H:i:s
