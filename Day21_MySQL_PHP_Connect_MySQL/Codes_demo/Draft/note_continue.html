@@ -1,0 +1,162 @@
+<?php
+// note.php
+/**
+ * Làm việc với CSDL MySQL
+ * 1/ Tổng quan
+ * - CSDL là 1 nơi lưu trữ dữ liệu. VD: nhà kho là 1 CSDL, bạn muốn lấy 1 thiết bị từ nhà kho ra phải
+ * nhờ đến thủ kho -> thủ kho -> câu truy vấn SQL - Structure Query Language
+ * Muốn tương tác đc với CSDL bắt buộc phải dùng câu truy vấn
+ * - CSDL là 1 thành phần bắt buộc phải có để làm website động (thêm CSDL + PHP) ,
+ * là website chứa các nội dung có thể
+ * thay đổi nhờ 1 hệ thống quản trị backend phía sau
+ * Website tĩnh (HTML + CSS + JS) là website nội dung cố định, muốn thay đổi nội dung phải sửa code
+ * - Có nhiều hệ quản trị CSDL khác nhau: MySQL, SQL Server, Mongodb, SQLite ...
+ * - Thông dụng nhất với PHP luôn luôn là MySQL -> đều free
+ * - Với coder học CSDL ntn ? Học viết các truy vấn SQL để tương tác với CSDL
+ * - Cài XAMPP -> cài sẵn MySQL, cài luôn PHPMyadmin: là công cụ quản trị CSDL MySQL bằng giao diện
+ * http://localhost/phpmyadmin
+ * Username: root
+ * Password:
+ *
+ * 2 / Thuật ngữ CSDL:
+ * - Database: cơ sở dữ liệu / CSDL
+ * - 1 Database có nhiều Table: bảng, chứa các dữ liệu cùng tính chất, cùng 1 đối tượng
+ * VD: bảng products chứa các sản phẩm
+ * bảng categories chứa các danh mục
+ * bảng users chứa các user
+ * -> tên bảng nên viết dạng số nhiều và viết thường
+ * - 1 Table chứa nhiều Record / Row - bản ghi: là 1 dữ liệu cụ thể của bảng
+ * VD: bảng products có 1 record/bản ghi: Tên sp = máy tính asus, giá = 1000, mô tả = đây là máy
+ * tính asus, ngày tạo = 06-12-2021 ....
+ * - 1 Table có nhiều Column / Field: trường, 1 trường là 1 mô tả thông tin cho bản ghi
+ * VD: bảng products có các trường: name, price, description, created_at ...
+ * - Primary key: khóa chính của bảng: là 1 trường phân biệt các bản ghi với nhau, các bản ghi ko đc
+ * trùng khóa chính, thường sẽ chọn trường id làm khóa chính vì có cơ chế tự động tăng lên 1
+ * mỗi khi có bản ghi mới sinh ra
+ * - Foreign key: khóa ngoại, là 1 trường dùng liên kết các bảng lại với nhau, là 1 trường
+ * bình thường trong bảng A nhưng lại là khóa chính của bảng B
+ * - Một số mối quan hệ trong CSDL
+ * 1 - 1: 1 danh mục chỉ có 1 sp, ngược lại 1 sp chỉ nằm trong 1 danh mục
+ * 1 - n: 1 danh mục có nhiều sp, ngược lại 1 sp chỉ nằm trong 1 danh mục
+ * n - n: 1 danh mục có nhiều sp, ngược lại  sp nằm trong nhiều danh mục -> phức tạp nhất
+ * - Các câu truy vấn SQL cơ bản: dùng PHPMyadmin làm nơi để viết truy vấn
+ *
+ */
+# 1 - Tạo CSDL: mặc dù MySQL ko phân biệt hoa thường, nên viết từ khóa của MySQL là in hoa
+CREATE DATABASE IF NOT EXISTS php0721e_demo
+CHARACTER SET utf8 # để CSDL có thể lưu đc ký tự có dấu mà ko bị lỗi font
+COLLATE utf8_general_ci; # để CSDL có thể lưu đc ký tự có dấu mà ko bị lỗi font
+# 2 - Sử dụng CSDL: để cho phép thao tác với CSDL cụ thể nào, chỉ có tác dụng khi thao tác bằng command line,
+# còn với PHPMyadmin thì sẽ ko có tác dụng
+# Muốn thao tác với bảng, bản ghi, trường ... bắt buộc phải đứng tại CSDL đó
+USE php0721e_demo;
+# 3 - Xóa CSDL:
+DROP DATABASE abc;
+# 4 - Các kiểu dữ liệu trong MySQL
+# + Kiểu number: lưu các giá trị là số, dùng 2 kiểu chính sau:
+# TINYINT: 1 byte, giá trị từ -128 -> 127
+# INT: 4 byte, giá trị xấp xỉ ~2 tỉ -> 2 tỉ
+# + Kiểu string: lưu các giá trị là chuỗi
+# VARCHAR: chuỗi 1 - 255 ký tự
+# TEXT: > 255 ký tự
+# + Kiểu Date và Time: kiểu thời gian, lưu chuỗi thời gian theo 1 format cố định:
+# DATETIME: lưu ngày giờ theo kiểu thủ công, format khi lưu vào CSDL bắt buộc phải là Y-m-d H:i:s
+# TIMESTAMP: lưu ngày giờ theo kiểu tự động lấy đc múi giờ,format khi lưu vào CSDL bắt buộc Y-m-d H:i:s
+
+
+
+SQL và MySQL ko giống nhau
+- SQL: là 1 ngôn ngữ truy vấn có cấu trúc - Structure Query Language
+- MySQL: là 1 CSDL, tương tác với MySQL sử dụng SQL, giống SQLServer, MongoDb, Oracle
+
+# 1 - Từ khóa LIKE: so sánh tương đối
+SELECT * FROM products WHERE name='laptop'; # so sánh tuyệt đối
+# tìm kiếm sp chứa từ laptop, ký tự % đại diện cho 1 ký tự bất kỳ
+SELECT * FROM products WHERE name LIKE '%laptop%'; #laptop, máy tính laptop, abclaptopabc ...
+#tìm kiếm các chuỗi bắt đầu bằng laptop
+SELECT * FROM products WHERE name LIKE 'laptop%'; # laptop asus, abc laptop -> false
+#tìm kiếm các chuỗi kết thúc bằng laptop
+SELECT * FROM products WHERE name LIKE '%laptop';
+# Elastic Search, Algolia Search -> index data dạng json
+
+# 2 - ORDER BY: sắp xếp theo trường tăng hoặc giảm dần
+# Sắp xếp giảm dần theo trường id
+SELECT * FROM products ORDER BY id DESC; # descenment
+# Sắp xếp tăng dần theo ngày tạo sp
+SELECT * FROM products ORDER BY created_at ASC; #ascement
+
+# 3 - BETWEEN: thay thế cho >= AND <=
+SELECT * FROM products WHERE id >= 1 AND id <= 3; # thông thường
+SELECT * FROM products WHERE id BETWEEN 1 AND 3; # dễ đọc hơn
+
+# 4 - IN: thay thế cho các OR
+SELECT * FROM products WHERE id = 1 OR id = 2 OR id = 3; #thông thường
+SELECT * FROM products WHERE id IN (1, 2, 3); # dễ đọc hơn
+
+# 5 - Hàm COUNT: đếm số bản ghi trả về
+SELECT COUNT(id) AS count_id FROM products;
+
+# 6 - Hàm MAX, MIN: lấy giá trị lớn nhất, nhỏ nhất theo trường
+SELECT MAX(id) AS max_id, MIN(id) AS min_id FROM products;
+
+# 7 - GROUP BY: nhóm các giá trị theo trường, tính toán trên nhóm này
+# Đếm các sản phẩm cùng giá
+SELECT price, COUNT(id) AS count_id FROM products GROUP BY price;
+
+# 8 - JOIN: là cơ chế lấy dữ liệu từ các bảng có liên kết
+# VD:  danh mục và sản phẩm, 1 danh mục chứa nhiều sản phẩm, 1 sản phẩm thuộc về 1 danh mục
+# - Trong CSDL có 3 quan hệ chính:
+# 1 - 1: 1 danh mục có 1 sp, 1 sp chỉ thuộc về 1 danh mục
+# 1 - n: 1 danh mục có nhiều sp, 1 sp chỉ thuộc về danh mục
+# n - n: 1 danh mục có nhiều sp. 1 sp thuộc về nhiều danh mục
+# - Trong CSDL mối quan hệ thể hiện qua khóa ngoại (foreign key)
+# Tạo bảng categories: id, name
+CREATE TABLE IF NOT EXISTS categories(
+id INT(11) AUTO_INCREMENT,
+name VARCHAR(255) NOT NULL,
+PRIMARY KEY (id)
+);
+# Tạo bảng products: id, category_id, name, price trong đó trường category_id là khóa ngoại của bảng
+# products, chú ý cách đặt tên khóa ngoại
+CREATE TABLE IF NOT EXISTS products(
+id INT(11) AUTO_INCREMENT,
+category_id INT(11) NOT NULL,
+name VARCHAR(150),
+price INT(11),
+PRIMARY KEY (id),
+# khai báo tường minh khóa ngoại cho bảng products, giúp cho dữ liệu chặt chẽ hơn khgi mà thêm
+#, sửa, xóa sp luôn cần category_id chính xác thì mới thao tác đc
+FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+
+# JOIN trong SQL có 3 kiểu chính: khi thao tác với trường với join, bắt buộc phải dùng tên bảng phía trc tên trường
+# INNER: hay dùng nhất, đảm bảo dữ liệu toàn vẹn nhất, bảng left = products, bảng right = categories
+# Check từng bản ghi trong bảng left, tìm tương ứng trong bảng right, nếu bảng right có trả về, ngược lại ko trả về
+SELECT products.*, categories.* FROM products
+INNER JOIN categories ON products.category_id = categories.id;
+
+# Select trường sử dụng AS để tránh trùng tên trường
+SELECT products.name AS product_name, categories.name AS category_name
+FROM products
+INNER JOIN categories ON products.category_id = categories.id;
+
+
+
+# LEFT: ít dùng: bảng left = products, bảng right = categories
+# Lấy toàn bộ bản ghi từ bảng left trước (chưa check bảng right vội), đi tìm trong bảng right, nếu có thì trả về, nếu ko có vẫn trả về nhưng
+# giá trị sẽ là null
+SELECT products.*, categories.* FROM products
+LEFT JOIN categories ON products.category_id = categories.id;
+
+# RIGHT: cực kỳ hiếm
+SELECT products.*, categories.* FROM products
+RIGHT JOIN categories ON products.category_id = categories.id;
+
+
+# giải lao 20h45
+
+
+
+
+
