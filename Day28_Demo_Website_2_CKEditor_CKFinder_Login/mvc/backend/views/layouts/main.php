@@ -175,5 +175,26 @@ mockup_html/backend/index.html paste vào file main.php
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="assets/js/adminlte.min.js"></script>
+<!--views/layouts/main.php-->
+<!--Tích hợp CKEditor-->
+<script src="assets/ckeditor/ckeditor.js"></script>
+<script>
+    $(document).ready(function() {
+        // alert('hello');
+        // - CKEditor chỉ tích hợp đc với textarea, thông qua
+        //name của textarea
+        // - MẶc định CKEditor ko hỗ trợ upload ảnh từ local lên
+        //, cần tích hợp thêm thư viện CKFinder vào
+        CKEDITOR.replace('description' , {
+            //đường dẫn đến file ckfinder.html của ckfinder
+            filebrowserBrowseUrl: 'assets/ckfinder/ckfinder.html',
+            //đường dẫn đến file connector.php của ckfinder
+            filebrowserUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+        });
+        // - Chú ý: PHiên bản CKFinder hiện tại đang ko tương
+        //thích với PHP 8.x, nên cần download CKFinder mới nhất
+        // về là đc
+    })
+</script>
 </body>
 </html>
