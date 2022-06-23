@@ -1,0 +1,2 @@
+<!--views/categories/detail.php-->
+
