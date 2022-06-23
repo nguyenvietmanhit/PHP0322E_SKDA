@@ -2,6 +2,19 @@
 
 class Controller
 {
+    public function __construct() {
+        // User chưa đăng nhập thì ko cho truy cập trang quản trị
+        //, cần loại trừ các chức năng ko cần đăng nhập: register
+        // và login
+        $controller = $_GET['controller'];
+        $action = $_GET['action'];
+        if (!isset($_SESSION['user']) && $controller != 'user'
+        && !in_array($action, ['login', 'register'])) {
+            $_SESSION['error'] = 'Bạn chưa đăng nhập';
+            header('Location:index.php?controller=user&action=login');
+            exit();
+        }
+    }
     //chứa nội dung view
     public $content;
     //chứa nội dung lỗi validate

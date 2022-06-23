@@ -42,4 +42,12 @@
  *     /frontend: khung MVC đã học
  * B4: Code: thường code backend trc để có data
  * cho frontend lấy ra hiển thị
+ *
+ * - Chức năng tìm kiếm:
+ * + Tương đối
+ * + SELECT + LIKE
+ * + Thực tế ko dùng truy vấn trên vì LIKE ko hỗ
+ * trợ cơ chế đánh index trong bảng -> dịch vụ search từ bên
+ * thứ 3 như Algolia Search, Elastic Search
+ * + Tìm kiếm hay chung màn hình với liệt kê
  */

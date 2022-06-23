@@ -88,4 +88,11 @@ class UserController extends Controller {
         $this->content = $this->render('views/users/login.php');
         require_once 'views/layouts/main_login.php';
     }
+
+    //index.php?controller=user&action=logout
+    public function logout() {
+        unset($_SESSION['user']);
+        header('Location:index.php?controller=user&action=login');
+        exit();
+    }
 }
