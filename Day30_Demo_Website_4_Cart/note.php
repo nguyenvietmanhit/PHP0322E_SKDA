@@ -22,3 +22,6 @@ $_SESSION['cart'] = [
         'quantity' => 2
     ]
 ];
+//https://vnexpress.net/quang-hai-toi-co-the-dap-ung-chuyen-mon-cua-pau-fc-4482137.html
+
+//xoa-san-pham/4.html
