@@ -6,7 +6,7 @@
  * -> sử dụng session
  * + Kết hợp kỹ thuật Ajax khi Thêm sp vào giỏ hàng,
  * tạo hiệu ứng tốt cho user
- * + Cấu trúc của giỏ hàng:
+ * + Cấu trúc của giỏ hàng:+
  */
 $_SESSION['cart'] = [
     5 => [
@@ -25,3 +25,9 @@ $_SESSION['cart'] = [
 //https://vnexpress.net/quang-hai-toi-co-the-dap-ung-chuyen-mon-cua-pau-fc-4482137.html
 
 //xoa-san-pham/4.html
+/**
+ * - Chức năng thanh toán:
+ * + Cần lưu vào 2 bảng: orders + order_details
+ * - Cần lưu vào bảng orders trước, trả về id của order vừa insert
+ * - Lưu tiếp vào bảng order_detail
+ */

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a29db77a-9327-4c17-a71e-2beea2c35b9e" name="itplus" url="http://php0322e-10.itpsoft.com.vn">
+        <fileTransfer rootFolder="/public_html" host="php0322e-10.itpsoft.com.vn" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -16,5 +16,4 @@ RewriteRule thanh-toan.html index.php?controller=payment&action=index
 
 # + Rewrite trang chi tiết sp
 # san-pham/san-pham-1/1.html
-RewriteRule san-pham/(.*)/([0-9]{1,}).html
- index.php?controller=product&action=detail&slug=$1&id=$2
+RewriteRule san-pham/(.*)/([0-9]{1,}).html index.php?controller=product&action=detail&slug=$1&id=$2
