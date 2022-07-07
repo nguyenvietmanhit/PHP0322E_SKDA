@@ -1,0 +1,20 @@
+# mvc/frontend/.htaccess
+# - Là file nhạy cảm, khi sửa file cần cẩn thận do file này
+# dùng để cấu hình truy cập vào trang
+# - Demo Rewrite URL: tạo ra đường dẫn thân thiện thay vì đường
+# dẫn MVC -> tốt cho SEO và thân thiện với user
+RewriteEngine On
+# + Rewrite trang Giỏ hàng của bạn:
+RewriteRule gio-hang-cua-ban.html index.php?controller=cart&action=index
+# + Rewrite xóa sp khỏi giỏ: có 1 tham số động là id của sp
+# muốn xóa, cần sử dụng Regular Expression (biểu thức chính quy)
+# để thể hiện cho tham số động
+RewriteRule xoa-san-pham/([0-9]{1,}).html index.php?controller=cart&action=delete&id=$1
+
+# + Rewrite trang thanh toán:
+RewriteRule thanh-toan.html index.php?controller=payment&action=index
+
+# + Rewrite trang chi tiết sp
+# san-pham/san-pham-1/1.html
+RewriteRule san-pham/(.*)/([0-9]{1,}).html
+ index.php?controller=product&action=detail&slug=$1&id=$2
