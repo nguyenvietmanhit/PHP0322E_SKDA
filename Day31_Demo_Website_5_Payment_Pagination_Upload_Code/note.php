@@ -1,33 +1,26 @@
 <?php
 /**
- * - Chức năng giỏ hàng:
- * + Lưu giỏ hàng bằng cách thức nào? cookie, session,
- * database ...
- * -> sử dụng session
- * + Kết hợp kỹ thuật Ajax khi Thêm sp vào giỏ hàng,
- * tạo hiệu ứng tốt cho user
- * + Cấu trúc của giỏ hàng:+
+ * note.php
+ * 1 / Composer:
+ * + Là công cụ quản lý thư viện 1 cách tự động, giống npm của
+ * Node JS
+ * + Command line:
+ * composer install
+ * composer update
+ * + Hầu hết các framework và CMS của PHP đều sử dụng Composer
+ * 2 / Laravel:
+ * + Là 1 framework viết bằng PHP, dựa trên mô hình MVC
+ * + Là FW phổ biến nhất
+ * + Laravel hay kết hợp VueJS để tạo ra 1 website hoàn chỉnh
+ * 3 / Code:
+ *  - Tạo CSDL: php0322e_laravel
+ *  - Tạo bảng products: id, name, price, created_at, updated_at
+ * , sử dụng cơ chế migrate của Laravel để tạo
+ * -> sử dụng công cụ artisan của Laravel
+ * php artisan make:migration create_table_products --create=products
+ * , nằm trong database/migrations/<tên-file>
+ * - Cài đặt môi trường tại file .env
+ * - Chạy lệnh sau để thực thi các file migrate:
+ * php artisan migrate
  */
-$_SESSION['cart'] = [
-    5 => [
-        'name' => 'IPhone X',
-        'avatar' => 'ip.png',
-        'price' => 1000,
-        'quantity' => 3
-    ],
-    2 => [
-        'name' => 'IPhone X2',
-        'avatar' => 'ip2.png',
-        'price' => 2000,
-        'quantity' => 2
-    ]
-];
-//https://vnexpress.net/quang-hai-toi-co-the-dap-ung-chuyen-mon-cua-pau-fc-4482137.html
-
-//xoa-san-pham/4.html
-/**
- * - Chức năng thanh toán:
- * + Cần lưu vào 2 bảng: orders + order_details
- * - Cần lưu vào bảng orders trước, trả về id của order vừa insert
- * - Lưu tiếp vào bảng order_detail
- */
+?>
